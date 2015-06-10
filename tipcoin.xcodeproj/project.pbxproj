@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC4421BB50D7653DFC3B2610 /* libPods-tipcoin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9A22A5C5F65FA22836144F /* libPods-tipcoin.a */; };
 		E89F0F441B287794002C5488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F0F431B287794002C5488 /* AppDelegate.swift */; };
 		E89F0F461B287794002C5488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F0F451B287794002C5488 /* ViewController.swift */; };
 		E89F0F491B287794002C5488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89F0F471B287794002C5488 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		815BAB89D6823924610F96E9 /* Pods-tipcoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipcoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-tipcoin/Pods-tipcoin.release.xcconfig"; sourceTree = "<group>"; };
 		E89F0F3E1B287794002C5488 /* tipcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89F0F421B287794002C5488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89F0F431B287794002C5488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		E89F0F531B287794002C5488 /* tipcoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipcoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89F0F581B287794002C5488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89F0F591B287794002C5488 /* tipcoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipcoinTests.swift; sourceTree = "<group>"; };
+		EF9A22A5C5F65FA22836144F /* libPods-tipcoin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tipcoin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F165C863A15EFB1F8A76BD1F /* Pods-tipcoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipcoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tipcoin/Pods-tipcoin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4421BB50D7653DFC3B2610 /* libPods-tipcoin.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		161ACC74E9E37D65F386C5C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F165C863A15EFB1F8A76BD1F /* Pods-tipcoin.debug.xcconfig */,
+				815BAB89D6823924610F96E9 /* Pods-tipcoin.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A32B5AB00ED7F92AA6208E24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF9A22A5C5F65FA22836144F /* libPods-tipcoin.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E89F0F351B287794002C5488 = {
 			isa = PBXGroup;
 			children = (
 				E89F0F401B287794002C5488 /* tipcoin */,
 				E89F0F561B287794002C5488 /* tipcoinTests */,
 				E89F0F3F1B287794002C5488 /* Products */,
+				161ACC74E9E37D65F386C5C0 /* Pods */,
+				A32B5AB00ED7F92AA6208E24 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E89F0F5D1B287794002C5488 /* Build configuration list for PBXNativeTarget "tipcoin" */;
 			buildPhases = (
+				B5B040B7820E0AAA63396FD0 /* Check Pods Manifest.lock */,
 				E89F0F3A1B287794002C5488 /* Sources */,
 				E89F0F3B1B287794002C5488 /* Frameworks */,
 				E89F0F3C1B287794002C5488 /* Resources */,
+				AD933EE4CDAA92B483F80E9B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +232,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD933EE4CDAA92B483F80E9B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tipcoin/Pods-tipcoin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5B040B7820E0AAA63396FD0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E89F0F3A1B287794002C5488 /* Sources */ = {
@@ -340,6 +399,7 @@
 		};
 		E89F0F5E1B287794002C5488 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F165C863A15EFB1F8A76BD1F /* Pods-tipcoin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tipcoin/Info.plist;
@@ -350,6 +410,7 @@
 		};
 		E89F0F5F1B287794002C5488 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 815BAB89D6823924610F96E9 /* Pods-tipcoin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tipcoin/Info.plist;
@@ -411,6 +472,7 @@
 				E89F0F5F1B287794002C5488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E89F0F601B287794002C5488 /* Build configuration list for PBXNativeTarget "tipcoinTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +481,7 @@
 				E89F0F621B287794002C5488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
