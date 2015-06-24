@@ -3,5 +3,6 @@
 
 target 'tipcoin' do
   pod 'Parse'
+  pod 'SDWebImage', '~>3.7'
   pod 'ParseFacebookUtilsV4'
 end

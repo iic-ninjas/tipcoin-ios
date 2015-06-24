@@ -22,16 +22,10 @@ class SplashViewController: UIViewController {
     tiledBgView.animate()
     if PFUser.currentUser() != nil {
       getUserData()
-      PFUser.logOut()
     } else {
       showLogin()
     }
   }
-  
-  func loadData() {
-    
-  }
-  
   func showLogin() {
     tiledBgView.stopAnimation()
     UIView.animateWithDuration(0.2, animations: {
@@ -45,11 +39,6 @@ class SplashViewController: UIViewController {
     PFFacebookUtils.logInInBackgroundWithReadPermissions(["user_about_me"]) {
       (user: PFUser?, error: NSError?) -> Void in
       if let user = user {
-        if user.isNew {
-          println("User signed up and logged in through Facebook!")
-        } else {
-          println("User logged in through Facebook!")
-        }
         self.getUserData()
       } else {
         println("Uh oh. The user cancelled the Facebook login.")
@@ -61,10 +50,24 @@ class SplashViewController: UIViewController {
     let request = FBSDKGraphRequest(graphPath: "me", parameters: nil)
     request.startWithCompletionHandler() { connection, result, error in
       println(result)
-      let firstName = result["first_name"] as? String
-      let lastName = result["last_name"] as? String
-      let displayName = result["name"] as? String
+      let firstName = result["first_name"] as! String
+      let lastName = result["last_name"] as! String
+      let displayName = result["name"] as! String
+      let fbId = result["id"] as! String
+      let avatarUrl = "http://graph.facebook.com/\(fbId)/picture"
+      
+      let userInfo = UserInfo(firstName: firstName, lastName: lastName, displayName: displayName, avatarUrl: avatarUrl)
+      UpdateUserOperation().run(userInfo) { result,err in
+        if let user = result as? PFUser {
+          
+        }
+      }
+//      if let user = PFUser.currentUser(){
+//        user.fetch()
+//      }
+      self.performSegueWithIdentifier("showMenu", sender: nil)
     }
 
+    
   }
 }

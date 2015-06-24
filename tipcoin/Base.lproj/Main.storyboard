@@ -24,7 +24,7 @@
         <!--Splash View Controller-->
         <scene sceneID="D7O-0G-NRn">
             <objects>
-                <viewController id="F6n-rk-v4Q" customClass="SplashViewController" customModule="tipcoin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splash" id="F6n-rk-v4Q" customClass="SplashViewController" customModule="tipcoin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xe9-I8-NlM"/>
                         <viewControllerLayoutGuide type="bottom" id="h8S-Yy-Ftx"/>
@@ -97,11 +97,62 @@
                     <connections>
                         <outlet property="loginButton" destination="TCa-ce-tzX" id="jt7-c6-2v0"/>
                         <outlet property="tiledBgView" destination="RrK-GV-rfX" id="3bq-Y9-yqq"/>
+                        <segue destination="EQm-wQ-tZj" kind="show" identifier="showMenu" id="lRW-g4-QGE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXi-Ik-67w" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="345" y="1130"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="28R-WD-dHp">
+            <objects>
+                <viewController storyboardIdentifier="menu" id="EQm-wQ-tZj" customClass="MenuViewController" customModule="tipcoin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mra-qU-lPn"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZFX-Iz-q5o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UVP-b9-GXH" customClass="TiledBackgroundView" customModule="tipcoin" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6y-Tc-pzg">
+                                <rect key="frame" x="263" y="64" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="0t7-yM-cqo"/>
+                                    <constraint firstAttribute="width" constant="75" id="DeQ-uJ-rGw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="37"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MY GROUPS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMJ-P2-RvI">
+                                <rect key="frame" x="249" y="165" width="103" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3147277832" green="0.75386148689999999" blue="0.3707537353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EMJ-P2-RvI" firstAttribute="top" secondItem="W6y-Tc-pzg" secondAttribute="bottom" constant="26" id="8ZE-Tk-qo6"/>
+                            <constraint firstAttribute="centerX" secondItem="EMJ-P2-RvI" secondAttribute="centerX" id="QAQ-Df-sIl"/>
+                            <constraint firstItem="W6y-Tc-pzg" firstAttribute="top" secondItem="Mra-qU-lPn" secondAttribute="bottom" constant="44" id="RpW-ko-WX8"/>
+                            <constraint firstAttribute="centerX" secondItem="W6y-Tc-pzg" secondAttribute="centerX" id="aIp-UM-bKm"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="patternImage" value="Tile"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="avatarView" destination="W6y-Tc-pzg" id="Ljp-cw-p3A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KIs-KB-svP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1011" y="1130"/>
         </scene>
     </scenes>
     <resources>

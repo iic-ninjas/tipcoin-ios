@@ -23,10 +23,14 @@ PODS:
     - FBSDKCoreKit (~> 4.0)
     - FBSDKLoginKit (~> 4.0)
     - Parse (~> 1.7.4)
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
 
 DEPENDENCIES:
   - Parse
   - ParseFacebookUtilsV4
+  - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
@@ -34,5 +38,6 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 57e37106af12c9e264e473dcb75d7decdbb07fe4
   Parse: 6ca512c6e860b66739c95151b2f76ac4712b7842
   ParseFacebookUtilsV4: 481ea7b00f8f62440c314ac7f80eada228bf7488
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
 COCOAPODS: 0.36.0
