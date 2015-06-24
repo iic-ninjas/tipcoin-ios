@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F6n-rk-v4Q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -134,23 +135,37 @@
                                 <color key="textColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY1-SI-725" userLabel="Logout-button">
+                                <rect key="frame" x="562" y="28" width="22" height="23"/>
+                                <state key="normal" image="icon-logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOut:" destination="EQm-wQ-tZj" eventType="touchUpInside" id="yZ7-TX-OXO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.3147277832" green="0.75386148689999999" blue="0.3707537353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EMJ-P2-RvI" firstAttribute="top" secondItem="W6y-Tc-pzg" secondAttribute="bottom" constant="26" id="8ZE-Tk-qo6"/>
+                            <constraint firstItem="fY1-SI-725" firstAttribute="top" secondItem="Mra-qU-lPn" secondAttribute="bottom" constant="8" id="GjO-pj-OqR"/>
                             <constraint firstAttribute="centerX" secondItem="EMJ-P2-RvI" secondAttribute="centerX" id="QAQ-Df-sIl"/>
                             <constraint firstItem="W6y-Tc-pzg" firstAttribute="top" secondItem="Mra-qU-lPn" secondAttribute="bottom" constant="44" id="RpW-ko-WX8"/>
+                            <constraint firstItem="fY1-SI-725" firstAttribute="trailing" secondItem="UVP-b9-GXH" secondAttribute="trailingMargin" id="YMk-fa-rre"/>
                             <constraint firstAttribute="centerX" secondItem="W6y-Tc-pzg" secondAttribute="centerX" id="aIp-UM-bKm"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="patternImage" value="Tile"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="avatarView" destination="W6y-Tc-pzg" id="Ljp-cw-p3A"/>
+                        <segue destination="qpt-Rz-CMv" kind="unwind" identifier="back" unwindAction="goToSideMenu:" id="oWw-qQ-q7T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIs-KB-svP" sceneMemberID="firstResponder"/>
+                <exit id="qpt-Rz-CMv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1011" y="1130"/>
         </scene>
@@ -159,6 +174,7 @@
         <image name="Facebooklogo" width="33" height="32"/>
         <image name="Splash-text" width="265" height="124"/>
         <image name="Tile" width="50" height="50"/>
+        <image name="icon-logout" width="22" height="23"/>
         <image name="tip-coin-large" width="122" height="123"/>
     </resources>
 </document>

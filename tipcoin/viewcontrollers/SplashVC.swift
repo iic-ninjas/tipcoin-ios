@@ -62,12 +62,14 @@ class SplashViewController: UIViewController {
           
         }
       }
-//      if let user = PFUser.currentUser(){
-//        user.fetch()
-//      }
       self.performSegueWithIdentifier("showMenu", sender: nil)
     }
 
     
   }
+  
+  @IBAction func goToSideMenu(segue: UIStoryboardSegue) {
+    startLoading()
+  }
+
 }

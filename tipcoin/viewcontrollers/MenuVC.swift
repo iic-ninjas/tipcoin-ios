@@ -12,6 +12,11 @@ class MenuViewController: UIViewController {
   
   @IBOutlet weak var avatarView: UIImageView!
   
+  @IBAction func logOut(sender: AnyObject) {
+    PFUser.logOut()
+    performSegueWithIdentifier("back", sender: nil)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     if let user = PFUser.currentUser() {
