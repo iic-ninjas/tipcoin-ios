@@ -3,4 +3,5 @@
 
 target 'tipcoin' do
   pod 'Parse'
+  pod 'ParseFacebookUtilsV4'
 end
