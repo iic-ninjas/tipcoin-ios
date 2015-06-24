@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AC4421BB50D7653DFC3B2610 /* libPods-tipcoin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9A22A5C5F65FA22836144F /* libPods-tipcoin.a */; };
+		B05482AB1B3AE26A008A4DA6 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482AA1B3AE26A008A4DA6 /* SplashVC.swift */; };
+		B05482AD1B3AE2CC008A4DA6 /* TiledBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482AC1B3AE2CC008A4DA6 /* TiledBackgroundView.swift */; };
 		E89F0F441B287794002C5488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F0F431B287794002C5488 /* AppDelegate.swift */; };
 		E89F0F461B287794002C5488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F0F451B287794002C5488 /* ViewController.swift */; };
 		E89F0F491B287794002C5488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89F0F471B287794002C5488 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		815BAB89D6823924610F96E9 /* Pods-tipcoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipcoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-tipcoin/Pods-tipcoin.release.xcconfig"; sourceTree = "<group>"; };
+		B05482AA1B3AE26A008A4DA6 /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		B05482AC1B3AE2CC008A4DA6 /* TiledBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiledBackgroundView.swift; sourceTree = "<group>"; };
 		E89F0F3E1B287794002C5488 /* tipcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89F0F421B287794002C5488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89F0F431B287794002C5488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B05482A91B3AE250008A4DA6 /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				B05482AA1B3AE26A008A4DA6 /* SplashVC.swift */,
+			);
+			path = viewcontrollers;
+			sourceTree = "<group>";
+		};
 		E89F0F351B287794002C5488 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +116,7 @@
 		E89F0F401B287794002C5488 /* tipcoin */ = {
 			isa = PBXGroup;
 			children = (
+				B05482A91B3AE250008A4DA6 /* viewcontrollers */,
 				E8F0F8951B287F500028303E /* cloud */,
 				E89F0F431B287794002C5488 /* AppDelegate.swift */,
 				E89F0F451B287794002C5488 /* ViewController.swift */,
@@ -112,6 +125,7 @@
 				E89F0F4C1B287794002C5488 /* LaunchScreen.xib */,
 				E89F0F411B287794002C5488 /* Supporting Files */,
 				E8F0F8921B287AED0028303E /* tipcoin-Bridging-Header.h */,
+				B05482AC1B3AE2CC008A4DA6 /* TiledBackgroundView.swift */,
 			);
 			path = tipcoin;
 			sourceTree = "<group>";
@@ -292,8 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05482AD1B3AE2CC008A4DA6 /* TiledBackgroundView.swift in Sources */,
 				E89F0F461B287794002C5488 /* ViewController.swift in Sources */,
 				E8F0F8981B287FA90028303E /* MyMembershipsOperation.swift in Sources */,
+				B05482AB1B3AE26A008A4DA6 /* SplashVC.swift in Sources */,
 				E89F0F441B287794002C5488 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
