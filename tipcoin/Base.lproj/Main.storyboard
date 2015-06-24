@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F6n-rk-v4Q">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tipcoin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,5 +21,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="D7O-0G-NRn">
+            <objects>
+                <viewController id="F6n-rk-v4Q" customClass="SplashViewController" customModule="tipcoin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xe9-I8-NlM"/>
+                        <viewControllerLayoutGuide type="bottom" id="h8S-Yy-Ftx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RrK-GV-rfX" customClass="TiledBackgroundView" customModule="tipcoin" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCa-ce-tzX">
+                                <rect key="frame" x="140" y="482" width="320" height="63"/>
+                                <color key="backgroundColor" red="0.24989384412765503" green="0.34899833798408508" blue="0.60677224397659302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="BbU-tx-8JP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="18" maxY="0.0"/>
+                                <state key="normal" title="Login with Facebook" image="Facebooklogo">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didClickLogin:" destination="F6n-rk-v4Q" eventType="touchUpInside" id="vNX-9S-XxF"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFX-fa-9bR">
+                                <rect key="frame" x="140" y="141" width="320" height="318"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash-text" translatesAutoresizingMaskIntoConstraints="NO" id="4k2-KG-JEM">
+                                        <rect key="frame" x="25" y="174" width="270" height="124"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="270" id="Nv2-Dd-hj6"/>
+                                            <constraint firstAttribute="height" constant="124" id="cgJ-Yx-uWG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tip-coin-large" translatesAutoresizingMaskIntoConstraints="NO" id="DG0-k0-oQh">
+                                        <rect key="frame" x="99" y="20" width="122" height="123"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="123" id="EcD-GS-iM9"/>
+                                            <constraint firstAttribute="width" constant="122" id="etC-Oh-JZG"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="DG0-k0-oQh" secondAttribute="centerX" id="2lF-wH-Lgm"/>
+                                    <constraint firstAttribute="bottom" secondItem="4k2-KG-JEM" secondAttribute="bottom" constant="20" id="BLl-9b-58p"/>
+                                    <constraint firstAttribute="centerX" secondItem="4k2-KG-JEM" secondAttribute="centerX" id="EL7-pP-HjW"/>
+                                    <constraint firstItem="4k2-KG-JEM" firstAttribute="top" secondItem="DG0-k0-oQh" secondAttribute="bottom" constant="31" id="OrO-tU-grH"/>
+                                    <constraint firstAttribute="height" constant="318" id="amu-rF-pmX"/>
+                                    <constraint firstItem="DG0-k0-oQh" firstAttribute="top" secondItem="FFX-fa-9bR" secondAttribute="top" constant="20" id="i57-gU-uLI"/>
+                                    <constraint firstAttribute="width" constant="320" id="ikj-eL-BHx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.314727783203125" green="0.75386148691177368" blue="0.37075373530387878" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TCa-ce-tzX" firstAttribute="width" secondItem="FFX-fa-9bR" secondAttribute="width" id="2X5-7l-hTw"/>
+                            <constraint firstItem="h8S-Yy-Ftx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TCa-ce-tzX" secondAttribute="bottom" id="6MA-OR-bA7"/>
+                            <constraint firstAttribute="centerX" secondItem="FFX-fa-9bR" secondAttribute="centerX" id="f8T-jW-OT0"/>
+                            <constraint firstItem="TCa-ce-tzX" firstAttribute="top" secondItem="FFX-fa-9bR" secondAttribute="bottom" constant="23" id="g4d-dA-TCF"/>
+                            <constraint firstAttribute="centerY" secondItem="FFX-fa-9bR" secondAttribute="centerY" id="oUR-hO-ZTi"/>
+                            <constraint firstAttribute="centerX" secondItem="TCa-ce-tzX" secondAttribute="centerX" id="xN9-gr-YeV"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="patternImage" value="Tile"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="TCa-ce-tzX" id="jt7-c6-2v0"/>
+                        <outlet property="tiledBgView" destination="RrK-GV-rfX" id="3bq-Y9-yqq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXi-Ik-67w" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="345" y="1130"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Facebooklogo" width="33" height="32"/>
+        <image name="Splash-text" width="265" height="124"/>
+        <image name="Tile" width="50" height="50"/>
+        <image name="tip-coin-large" width="122" height="123"/>
+    </resources>
 </document>
