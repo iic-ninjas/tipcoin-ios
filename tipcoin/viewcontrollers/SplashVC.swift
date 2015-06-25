@@ -36,7 +36,7 @@ class SplashViewController: UIViewController {
   @IBAction func didClickLogin(sender: AnyObject) {
     tiledBgView.animate()
     loginButton.alpha = 0
-    PFFacebookUtils.logInInBackgroundWithReadPermissions(["user_about_me"]) {
+    PFFacebookUtils.logInInBackgroundWithReadPermissions([]) {
       (user: PFUser?, error: NSError?) -> Void in
       if let user = user {
         self.getUserData()
@@ -60,6 +60,11 @@ class SplashViewController: UIViewController {
       UpdateUserOperation().run(userInfo) { result,err in
         if let user = result as? PFUser {
           
+        }
+      }
+      if let user = PFUser.currentUser() {
+        if user["avatarUrl"] == nil {
+          user.fetchInBackground()
         }
       }
       self.performSegueWithIdentifier("showMenu", sender: nil)
