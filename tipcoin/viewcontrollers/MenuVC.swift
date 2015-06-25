@@ -17,6 +17,10 @@ class MenuViewController: UIViewController {
     performSegueWithIdentifier("back", sender: nil)
   }
   
+  @IBAction func closeMenu(sender: AnyObject) {
+    
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     if let user = PFUser.currentUser() {
