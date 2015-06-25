@@ -22,8 +22,8 @@ class MenuViewController: UIViewController {
     if let user = PFUser.currentUser() {
 
       if let urlString = user["avatarUrl"] as? String,
-         let avatarURL = NSURL(string: urlString) {
-        avatarView.sd_setImageWithURL(avatarURL)
+         let avatarURL = NSURL(string: urlString + "?type=large") {
+          avatarView.sd_setImageWithURL(avatarURL, placeholderImage: UIImage(named: "default-avatar"))
       }
       
     }

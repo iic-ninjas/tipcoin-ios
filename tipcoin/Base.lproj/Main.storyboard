@@ -117,7 +117,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6y-Tc-pzg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="W6y-Tc-pzg">
                                 <rect key="frame" x="263" y="64" width="75" height="75"/>
                                 <color key="backgroundColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -174,6 +174,7 @@
         <image name="Facebooklogo" width="33" height="32"/>
         <image name="Splash-text" width="265" height="124"/>
         <image name="Tile" width="50" height="50"/>
+        <image name="default-avatar" width="75" height="75"/>
         <image name="icon-logout" width="22" height="23"/>
         <image name="tip-coin-large" width="122" height="123"/>
     </resources>
