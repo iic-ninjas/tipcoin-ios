@@ -10,6 +10,7 @@ import Foundation
 
 class MenuViewController: UIViewController {
   
+  @IBOutlet weak var spinnerView: Spinner!
   @IBOutlet weak var avatarView: UIImageView!
   
   @IBAction func logOut(sender: AnyObject) {
