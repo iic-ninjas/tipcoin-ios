@@ -49,7 +49,7 @@ class MenuViewController: UIViewController {
       if let cell = sender as? GroupMembershipCell,
             navVc = segue.destinationViewController as? UINavigationController,
             vc = navVc.topViewController as? GroupViewController {
-        vc.group = cell.member?.group
+        vc.userMember = cell.member
       }
     }
   }

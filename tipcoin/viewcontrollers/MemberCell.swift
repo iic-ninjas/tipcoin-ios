@@ -10,6 +10,7 @@ import Foundation
 
 protocol MemberCellDelegate {
   func cellStateChanged(cell: MemberCell)
+  func spot(member: Member)
 }
 
 class MemberCell: UITableViewCell {
@@ -26,6 +27,20 @@ class MemberCell: UITableViewCell {
   
   var delegate: MemberCellDelegate?
   
+  var member: Member? {
+    didSet {
+      if let member = member {
+        if let avatarUrl = member.avatarUrl,
+          url = NSURL(string: avatarUrl) {
+            avatarView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "default-avatar"))
+        }
+        nameLabel.text = member.displayName
+        balanceLabel.text = member.displayBalance
+        resetState()
+      }
+    }
+  }
+  
   @IBOutlet weak var spotButton: UIButton!
   @IBOutlet weak var avatarView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
@@ -38,28 +53,15 @@ class MemberCell: UITableViewCell {
   
   func didTapBalance(gesture: UITapGestureRecognizer){
     self.resetSpotButton()
-    self.spotButton.hidden = false
-    self.balanceLabel.hidden = true
+    animateToSpotState()
     state = .Spot
   }
   
   @IBAction func didClickSpot(sender: AnyObject) {
     if (state != .Spot) { return }
-    println("Spotted")
     animateToSpottedState()
     state = .Spotted
-  }
-  
-  func setMember(member: Member) {
-    if let avatarUrl = member.avatarUrl,
-                 url = NSURL(string: avatarUrl) {
-      avatarView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "default-avatar"))
-
-    }
-    
-    nameLabel.text = member.displayName
-    balanceLabel.text = member.displayBalance
-    resetState()
+    self.delegate?.spot(self.member!)
   }
   
   private func animateToSpottedState() {
@@ -72,13 +74,40 @@ class MemberCell: UITableViewCell {
       self.spotButton.layoutIfNeeded()
     }
     
+    let targetColor = UIColor(red:0.215, green:0.752, blue:0.396, alpha:1).CGColor
     let animation = CABasicAnimation(keyPath: "borderColor")
     animation.fromValue = self.spotButton.layer.borderColor
-    let targetColor = UIColor(red:0.215, green:0.752, blue:0.396, alpha:1).CGColor
     animation.toValue = targetColor
     animation.duration = duration
-    self.spotButton.layer.borderColor = targetColor
-    self.spotButton.layer.addAnimation(animation, forKey: "borderAnimation")
+    spotButton.layer.borderColor = targetColor
+    spotButton.layer.addAnimation(animation, forKey: "borderAnimation")
+  }
+  
+  private func animateToSpotState(){
+    balanceLabel.hidden = false
+    balanceLabel.alpha = 1
+    spotButton.hidden = false
+    spotButton.alpha = 0
+    
+    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 4, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+      self.spotButton.alpha = 1
+      self.balanceLabel.alpha = 0
+      }, completion: { complete in
+    })
+  }
+  private func animateToBalanceState(completion: (()->())? = nil){
+    
+    balanceLabel.hidden = false
+    balanceLabel.alpha = 0
+    spotButton.hidden = false
+    spotButton.alpha = 1
+    
+    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 4, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+      self.spotButton.alpha = 0
+      self.balanceLabel.alpha = 1
+      }, completion: { complete in
+        completion?()
+    })
   }
   
   private func resetSpotButton() {
@@ -89,8 +118,9 @@ class MemberCell: UITableViewCell {
   
   func resetState() {
     if (state == .Balance) { return }
-    spotButton.hidden = true
-    resetSpotButton()
-    balanceLabel.hidden = false
+    animateToBalanceState() {
+      self.resetSpotButton()
+    }
+    state = .Balance
   }
 }

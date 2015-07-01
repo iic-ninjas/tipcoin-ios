@@ -41,10 +41,15 @@ class GroupViewController: UIViewController {
           cell.selected = false
           vc.member = members[cell.tag]
       }
-      
     }
   }
 
+  var userMember: Member? {
+    didSet {
+      self.group = userMember?.group
+    }
+  }
+  
   var group: Group? {
     didSet {
       let mineGroup = group
@@ -70,6 +75,10 @@ class GroupViewController: UIViewController {
     }
   }
   
+  func refreshUI() {
+    self.tableView.reloadData()
+  }
+  
   @IBAction func backToGroup(segue: UIStoryboardSegue) {
   }
 
@@ -83,7 +92,7 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate, Membe
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("MEMBER_CELL", forIndexPath: indexPath) as! MemberCell
     cell.tag = indexPath.row
-    cell.setMember(members[indexPath.row])
+    cell.member = members[indexPath.row]
     cell.delegate = self
     return cell
   }
@@ -99,9 +108,16 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate, Membe
     }
   }
   
+  func spot(member: Member) {
+    SpotOperation.run(self.userMember!, to: member) { transaction, err in
+      println(transaction)
+      self.refreshUI()
+    }
+  }
+  
   func scrollViewWillBeginDragging(scrollView: UIScrollView) {
     if let cell = self.currentSelectedCell {
-      if cell.state == .Spot {
+      if cell.state != .Spot {
         cell.resetState()
       }
     }
