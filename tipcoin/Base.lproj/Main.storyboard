@@ -122,7 +122,7 @@
                                 </state>
                                 <connections>
                                     <action selector="closeMenu:" destination="EQm-wQ-tZj" eventType="touchUpInside" id="oZz-hh-9Y2"/>
-                                    <segue destination="kSP-o7-QSO" kind="show" id="ngK-SS-FfD"/>
+                                    <segue destination="qpt-Rz-CMv" kind="unwind" unwindAction="backToGroup:" id="ytU-wn-JFv"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="W6y-Tc-pzg">
@@ -174,7 +174,7 @@
                                         <connections>
                                             <outlet property="balance" destination="l69-Qz-VdC" id="lTQ-Wo-8Ib"/>
                                             <outlet property="groupName" destination="iTa-PB-wUC" id="sA6-dZ-6Nv"/>
-                                            <segue destination="kSP-o7-QSO" kind="show" identifier="showGroup" id="hsJ-6V-nAO"/>
+                                            <segue destination="kSP-o7-QSO" kind="presentation" identifier="showGroup" modalTransitionStyle="crossDissolve" id="hsJ-6V-nAO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -381,6 +381,7 @@
                         <barButtonItem key="leftBarButtonItem" image="icon-burger" id="5Mu-H1-sLO">
                             <connections>
                                 <action selector="showMenu:" destination="XmI-1O-OR2" id="Q6u-dR-sCe"/>
+                                <segue destination="EQm-wQ-tZj" kind="presentation" identifier="showMenu" modalTransitionStyle="coverVertical" id="V0q-zQ-acR"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icon-invite" id="y8o-qs-VPk">
@@ -511,6 +512,6 @@
         <image name="tip-coin-large" width="122" height="123"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hsJ-6V-nAO"/>
+        <segue reference="lRW-g4-QGE"/>
     </inferredMetricsTieBreakers>
 </document>

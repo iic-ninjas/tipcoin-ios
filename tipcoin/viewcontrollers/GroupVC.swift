@@ -50,6 +50,10 @@ class GroupViewController: UIViewController {
       tableView.reloadData()
     }
   }
+  
+  @IBAction func backToGroup(segue: UIStoryboardSegue) {
+  }
+
 }
 
 extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
