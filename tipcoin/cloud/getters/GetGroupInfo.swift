@@ -16,9 +16,8 @@ class GetGroupInfo {
         println(error.description)
       }
       
-      if let group = rawResponse as? PFObject {
-        println(group.objectId)
-        println(group["members"])
+      if let group = rawResponse as? Group {
+        println("i have group!")
       } else if let string = rawResponse as? String {
         println("operation string")
       } else {
