@@ -11,12 +11,23 @@ import Foundation
 class GroupViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
+  var currentSelectedCell: MemberCell?
   
   
   @IBAction func showMenu(sender: AnyObject) {
   }
   
   @IBAction func shareInvite(sender: AnyObject) {
+    println(group)
+    println(group?.inviteUrl)
+    if let url = group?.inviteUrl {
+      println(url)
+      let sharingItems = [url, url.absoluteString!]
+      let shareVC = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
+      shareVC.excludedActivityTypes = [UIActivityTypeAddToReadingList, UIActivityTypeAssignToContact]
+      presentViewController(shareVC, animated: true, completion: nil)
+    }
+    
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -56,12 +67,16 @@ class GroupViewController: UIViewController {
 
 }
 
-extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
+
+
+extension GroupViewController: UITableViewDataSource, UITableViewDelegate, MemberCellDelegate {
+  
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("MEMBER_CELL", forIndexPath: indexPath) as! MemberCell
     cell.tag = indexPath.row
     cell.setMember(members[indexPath.row])
+    cell.delegate = self
     return cell
   }
   
@@ -69,4 +84,12 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
     return members.count
   }
   
+  func cellStateChanged(cell: MemberCell) {
+    if cell.state == .Spot {
+      self.currentSelectedCell?.resetState()
+      self.currentSelectedCell = cell
+    }
+  }
+  
 }
+

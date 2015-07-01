@@ -24,4 +24,9 @@ class Group: PFObject, PFSubclassing {
   @NSManaged var inviteToken: String
   @NSManaged var members: [Member]
   
+  var inviteUrl: NSURL? {
+    let string = "http://tipcoin.parseapp.com/invite?gid=\(objectId!)&iid=\(inviteToken)"
+    return NSURL(string: string)
+  }
+  
 }

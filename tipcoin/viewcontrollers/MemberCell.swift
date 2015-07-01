@@ -8,7 +8,23 @@
 
 import Foundation
 
+protocol MemberCellDelegate {
+  func cellStateChanged(cell: MemberCell)
+}
+
 class MemberCell: UITableViewCell {
+  
+  enum State {
+    case Balance, Spot, Spotted
+  }
+  
+  var state: State = .Balance {
+    didSet {
+      delegate?.cellStateChanged(self)
+    }
+  }
+  
+  var delegate: MemberCellDelegate?
   
   @IBOutlet weak var spotButton: UIButton!
   @IBOutlet weak var avatarView: UIImageView!
@@ -24,12 +40,14 @@ class MemberCell: UITableViewCell {
     self.resetSpotButton()
     self.spotButton.hidden = false
     self.balanceLabel.hidden = true
+    state = .Spot
   }
   
   @IBAction func didClickSpot(sender: AnyObject) {
+    if (state != .Spot) { return }
     println("Spotted")
     animateToSpottedState()
-    
+    state = .Spotted
   }
   
   func setMember(member: Member) {
@@ -41,6 +59,7 @@ class MemberCell: UITableViewCell {
     
     nameLabel.text = member.displayName
     balanceLabel.text = member.displayBalance
+    resetState()
   }
   
   private func animateToSpottedState() {
@@ -66,5 +85,12 @@ class MemberCell: UITableViewCell {
     self.spotButton.setImage(nil, forState: .Normal)
     self.spotButton.setTitle("Spot", forState: .Normal)
     self.spotButton.layer.setBorderUIColor(UIColor(red:0.29, green:0.564, blue:0.886, alpha:1))
+  }
+  
+  func resetState() {
+    if (state == .Balance) { return }
+    spotButton.hidden = true
+    resetSpotButton()
+    balanceLabel.hidden = false
   }
 }

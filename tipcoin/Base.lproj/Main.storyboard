@@ -362,18 +362,37 @@
                                     <outlet property="delegate" destination="XmI-1O-OR2" id="ErQ-bD-MFN"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tippy-small" translatesAutoresizingMaskIntoConstraints="NO" id="2bh-8I-Qn7">
+                                <rect key="frame" x="16" y="480" width="568" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="5nh-bB-5P9"/>
+                                    <constraint firstAttribute="height" constant="44" id="Z08-Jd-e9S"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5nh-bB-5P9"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2bh-8I-Qn7" firstAttribute="leading" secondItem="cd6-Fz-xfx" secondAttribute="leadingMargin" id="0kh-YV-HSJ"/>
                             <constraint firstAttribute="trailing" secondItem="0LS-QF-uN0" secondAttribute="trailing" id="1w2-Fe-rVs"/>
+                            <constraint firstItem="2bh-8I-Qn7" firstAttribute="width" secondItem="cd6-Fz-xfx" secondAttribute="width" id="EuI-5p-bMd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2bh-8I-Qn7" secondAttribute="trailing" id="Q5Y-Wc-vWl"/>
+                            <constraint firstItem="S9g-ez-SxN" firstAttribute="top" secondItem="2bh-8I-Qn7" secondAttribute="bottom" constant="246" id="TdC-CX-gxT"/>
                             <constraint firstItem="S9g-ez-SxN" firstAttribute="top" secondItem="0LS-QF-uN0" secondAttribute="bottom" id="b6y-X0-AjS"/>
                             <constraint firstItem="0LS-QF-uN0" firstAttribute="leading" secondItem="cd6-Fz-xfx" secondAttribute="leadingMargin" id="dl8-Zk-MhR"/>
+                            <constraint firstItem="S9g-ez-SxN" firstAttribute="top" secondItem="2bh-8I-Qn7" secondAttribute="bottom" constant="12" id="r8z-2s-D4U"/>
                             <constraint firstItem="0LS-QF-uN0" firstAttribute="leading" secondItem="cd6-Fz-xfx" secondAttribute="leading" id="sXZ-bS-qna"/>
                             <constraint firstItem="0LS-QF-uN0" firstAttribute="top" secondItem="iZU-BF-cez" secondAttribute="bottom" id="u9k-bo-AVg"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="dl8-Zk-MhR"/>
+                                <exclude reference="EuI-5p-bMd"/>
+                                <exclude reference="TdC-CX-gxT"/>
                             </mask>
                         </variation>
                     </view>
@@ -397,23 +416,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfJ-4h-8kQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1751" y="1886"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="KYB-Dg-KNp">
-            <objects>
-                <viewController id="RiP-4R-lzF" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BE9-eE-rc8"/>
-                        <viewControllerLayoutGuide type="bottom" id="HFJ-P9-KH7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WlL-JN-cu9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ObZ-ZF-czM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
         <!--Member Name-->
         <scene sceneID="mON-mE-iiZ">
@@ -498,6 +500,23 @@
             </objects>
             <point key="canvasLocation" x="2495" y="1886"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="zkc-iX-2s3">
+            <objects>
+                <viewController id="OlT-BQ-sFm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Yq-0J-kq3"/>
+                        <viewControllerLayoutGuide type="bottom" id="g7k-tC-eln"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vkZ-GC-gFu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dBb-eQ-0dc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="Facebooklogo" width="33" height="32"/>
@@ -510,8 +529,9 @@
         <image name="icon-logout" width="22" height="23"/>
         <image name="positive" width="20" height="19"/>
         <image name="tip-coin-large" width="122" height="123"/>
+        <image name="tippy-small" width="37" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lRW-g4-QGE"/>
+        <segue reference="V0q-zQ-acR"/>
     </inferredMetricsTieBreakers>
 </document>
