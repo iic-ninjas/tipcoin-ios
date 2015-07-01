@@ -18,6 +18,7 @@
 		B07F77431B43C47000499107 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F77421B43C47000499107 /* Transaction.swift */; };
 		B07F77451B43C4B800499107 /* PFObject+Equality.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F77441B43C4B800499107 /* PFObject+Equality.swift */; };
 		B0FB94B41B440F6B0056A8A0 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB94B31B440F6B0056A8A0 /* Spinner.swift */; };
+		B0FB94B71B4410610056A8A0 /* MembershipDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB94B61B4410610056A8A0 /* MembershipDatastore.swift */; };
 		E89F0F441B287794002C5488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F0F431B287794002C5488 /* AppDelegate.swift */; };
 		E89F0F491B287794002C5488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89F0F471B287794002C5488 /* Main.storyboard */; };
 		E89F0F4B1B287794002C5488 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89F0F4A1B287794002C5488 /* Images.xcassets */; };
@@ -48,6 +49,7 @@
 		B07F77421B43C47000499107 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		B07F77441B43C4B800499107 /* PFObject+Equality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFObject+Equality.swift"; sourceTree = "<group>"; };
 		B0FB94B31B440F6B0056A8A0 /* Spinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		B0FB94B61B4410610056A8A0 /* MembershipDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipDatastore.swift; sourceTree = "<group>"; };
 		E89F0F3E1B287794002C5488 /* tipcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89F0F421B287794002C5488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89F0F431B287794002C5488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		B0FB94B51B44104B0056A8A0 /* datastores */ = {
+			isa = PBXGroup;
+			children = (
+				B0FB94B61B4410610056A8A0 /* MembershipDatastore.swift */,
+			);
+			path = datastores;
+			sourceTree = "<group>";
+		};
 		E89F0F351B287794002C5488 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 		E8F0F8951B287F500028303E /* cloud */ = {
 			isa = PBXGroup;
 			children = (
+				B0FB94B51B44104B0056A8A0 /* datastores */,
 				E8F0F8961B287F560028303E /* operations */,
 			);
 			path = cloud;
@@ -336,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B07F77431B43C47000499107 /* Transaction.swift in Sources */,
+				B0FB94B71B4410610056A8A0 /* MembershipDatastore.swift in Sources */,
 				B05482AD1B3AE2CC008A4DA6 /* TiledBackgroundView.swift in Sources */,
 				B07F773F1B43C3B200499107 /* Member.swift in Sources */,
 				B07F77451B43C4B800499107 /* PFObject+Equality.swift in Sources */,

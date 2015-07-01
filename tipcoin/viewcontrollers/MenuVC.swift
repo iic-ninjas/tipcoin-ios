@@ -11,6 +11,7 @@ import Foundation
 class MenuViewController: UIViewController {
   
   @IBOutlet weak var spinnerView: Spinner!
+  @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var avatarView: UIImageView!
   
   @IBAction func logOut(sender: AnyObject) {
@@ -25,6 +26,11 @@ class MenuViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     if let user = PFUser.currentUser() {
+      self.spinnerView.spin()
+      MembershipDatastore.sharedInstance.query() {
+        self.spinnerView.stop()
+        self.refresh()
+      }
 
       if let urlString = user["avatarUrl"] as? String,
          let avatarURL = NSURL(string: urlString + "?type=large") {
@@ -33,18 +39,23 @@ class MenuViewController: UIViewController {
       
     }
   }
+  
+  private func refresh() {
+    self.tableView.reloadData()
+  }
 }
 
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("GROUP_CELL", forIndexPath: indexPath) as! GroupMembershipCell
-    cell.groupName.text = "My Group"
-    cell.balance.text = "-1"
+    let member = MembershipDatastore.sharedInstance.memberships[indexPath.row]
+    cell.groupName.text = member.group.name
+    cell.balance.text = member.balance.description
     return cell
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
+    return MembershipDatastore.sharedInstance.memberships.count
   }
 }

@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     Parse.setApplicationId("8BhP3CPxuMhtKpSNrsS61XkXYliBccBDqkum5clm", clientKey: "Ls5bQdEyhIeTbLSooSYICtXmFjOCWhW9QHu70DPM")
     PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
     PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(nil, block: nil)
+    Member.initialize()
+    Group.initialize()
+    Transaction.initialize()
     return true
   }
   
