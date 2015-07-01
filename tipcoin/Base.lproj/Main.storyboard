@@ -5,23 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tipcoin" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
         <!--Splash View Controller-->
         <scene sceneID="D7O-0G-NRn">
             <objects>
@@ -117,8 +100,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY GROUPS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMJ-P2-RvI">
-                                <rect key="frame" x="249" y="165" width="103" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MY GROUPS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMJ-P2-RvI">
+                                <rect key="frame" x="250" y="165" width="103" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -153,17 +136,64 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BmY-8W-oMs">
+                                <rect key="frame" x="50" y="204" width="500" height="396"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GROUP_CELL" rowHeight="60" id="422-Up-gHX" customClass="GroupMembershipCell" customModule="tipcoin" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="422-Up-gHX" id="equ-rn-u9f">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTa-PB-wUC">
+                                                    <rect key="frame" x="8" y="16" width="134" height="29"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                                    <color key="textColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l69-Qz-VdC">
+                                                    <rect key="frame" x="464" y="16" width="28" height="29"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                                    <color key="textColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="iTa-PB-wUC" secondAttribute="centerY" id="7uh-wN-12u"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="l69-Qz-VdC" secondAttribute="trailing" id="BPo-I4-4d4"/>
+                                                <constraint firstItem="iTa-PB-wUC" firstAttribute="leading" secondItem="equ-rn-u9f" secondAttribute="leadingMargin" id="VKa-di-mpp"/>
+                                                <constraint firstAttribute="centerY" secondItem="l69-Qz-VdC" secondAttribute="centerY" id="emc-Sf-wil"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="balance" destination="l69-Qz-VdC" id="lTQ-Wo-8Ib"/>
+                                            <outlet property="groupName" destination="iTa-PB-wUC" id="sA6-dZ-6Nv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EQm-wQ-tZj" id="gUZ-JN-5cg"/>
+                                    <outlet property="delegate" destination="EQm-wQ-tZj" id="Cv0-h7-lro"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.3147277832" green="0.75386148689999999" blue="0.3707537353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EMJ-P2-RvI" firstAttribute="top" secondItem="W6y-Tc-pzg" secondAttribute="bottom" constant="26" id="8ZE-Tk-qo6"/>
+                            <constraint firstItem="BmY-8W-oMs" firstAttribute="top" secondItem="EMJ-P2-RvI" secondAttribute="bottom" constant="19" id="92Y-0B-rGf"/>
                             <constraint firstItem="fY1-SI-725" firstAttribute="top" secondItem="Mra-qU-lPn" secondAttribute="bottom" constant="8" id="GjO-pj-OqR"/>
                             <constraint firstItem="5Il-0O-eFF" firstAttribute="top" secondItem="Mra-qU-lPn" secondAttribute="bottom" constant="8" id="Hf0-xC-spy"/>
                             <constraint firstAttribute="centerX" secondItem="EMJ-P2-RvI" secondAttribute="centerX" id="QAQ-Df-sIl"/>
                             <constraint firstItem="W6y-Tc-pzg" firstAttribute="top" secondItem="Mra-qU-lPn" secondAttribute="bottom" constant="44" id="RpW-ko-WX8"/>
+                            <constraint firstAttribute="trailing" secondItem="BmY-8W-oMs" secondAttribute="trailing" constant="50" id="SwF-Oi-2aQ"/>
                             <constraint firstItem="fY1-SI-725" firstAttribute="trailing" secondItem="UVP-b9-GXH" secondAttribute="trailingMargin" id="YMk-fa-rre"/>
                             <constraint firstAttribute="centerX" secondItem="W6y-Tc-pzg" secondAttribute="centerX" id="aIp-UM-bKm"/>
                             <constraint firstItem="5Il-0O-eFF" firstAttribute="leading" secondItem="UVP-b9-GXH" secondAttribute="leadingMargin" id="ceQ-Jy-Vhl"/>
+                            <constraint firstItem="ZFX-Iz-q5o" firstAttribute="top" secondItem="BmY-8W-oMs" secondAttribute="bottom" id="inU-D6-N0I"/>
+                            <constraint firstItem="BmY-8W-oMs" firstAttribute="leading" secondItem="UVP-b9-GXH" secondAttribute="leading" constant="50" id="qMd-wS-usw"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="patternImage" value="Tile"/>
