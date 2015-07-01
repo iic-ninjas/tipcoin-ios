@@ -10,13 +10,17 @@ import Foundation
 
 class GroupViewController: UIViewController {
   
-  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var tableView: UITableView! {
+    didSet {
+      refreshControl = UIRefreshControl()
+      refreshControl.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
+      tableView.addSubview(refreshControl)
+    }
+  }
+  var refreshControl: UIRefreshControl!
   var currentSelectedCell: MemberCell?
   
-  
-  @IBAction func showMenu(sender: AnyObject) {
-  }
-  
+    
   @IBAction func shareInvite(sender: AnyObject) {
     println(group)
     println(group?.inviteUrl)
@@ -46,19 +50,23 @@ class GroupViewController: UIViewController {
       let mineGroup = group
       if let group = group {
         self.navigationItem.title = group.name
-        GetGroupInfo.get(group.objectId!) { group in
-          self.members = group.members.sorted { left, right in
-            if left.balance < right.balance { return true }
-            if left.balance > right.balance { return false }
-            return left.displayName < right.displayName
-          }
-        }
+        self.refresh()
       }
     }
   }
+  
   var members: [Member] = [] {
     didSet {
       tableView.reloadData()
+      refreshControl.endRefreshing()
+    }
+  }
+  
+  func refresh() {
+    if let group = group {
+      GetGroupInfo.get(group.objectId!) { group in
+        self.members = group.sortedMembers
+      }
     }
   }
   

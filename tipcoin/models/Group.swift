@@ -24,6 +24,16 @@ class Group: PFObject, PFSubclassing {
   @NSManaged var inviteToken: String
   @NSManaged var members: [Member]
   
+  var sortedMembers: [Member] {
+    return members.sorted { left, right in
+      if left.balance < right.balance { return true }
+      if left.balance > right.balance { return false }
+      return left.displayName < right.displayName
+      }.filter { member in
+        return member.user != PFUser.currentUser()
+    }
+  }
+  
   var inviteUrl: NSURL? {
     let string = "http://tipcoin.parseapp.com/invite?gid=\(objectId!)&iid=\(inviteToken)"
     return NSURL(string: string)

@@ -25,7 +25,8 @@ class Member: PFObject, PFSubclassing {
   @NSManaged var displayName: String?
   @NSManaged var avatarUrl: String?
   @NSManaged var balance: Int
-
+  
+  @NSManaged var user: PFUser?
   @NSManaged var group: Group
   
   var displayBalance: String {
