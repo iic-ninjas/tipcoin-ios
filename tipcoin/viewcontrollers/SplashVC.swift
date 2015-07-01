@@ -69,13 +69,6 @@ class SplashViewController: UIViewController {
       }
       self.performSegueWithIdentifier("showMenu", sender: nil)
     }
-    
-    GetGroupInfo.get("r4thQWFNqd", callback: { group in
-      println("Have group!")
-      println(group.name)
-    })
-
-    
   }
   
   @IBAction func goToSideMenu(segue: UIStoryboardSegue) {
