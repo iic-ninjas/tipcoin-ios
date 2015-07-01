@@ -69,8 +69,6 @@ class SplashViewController: UIViewController {
       }
       self.performSegueWithIdentifier("showMenu", sender: nil)
     }
-
-    
   }
   
   @IBAction func goToSideMenu(segue: UIStoryboardSegue) {

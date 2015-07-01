@@ -18,7 +18,7 @@ class MembershipDatastore: NSObject {
   
   func query( callback: (()->())? = nil) {
     loaded = false
-    MyMembershipsOperations.run { (memberships) in
+    MyMembershipsOperation.run { (memberships) in
       self.memberships = memberships
       self.loaded = true
       callback?()

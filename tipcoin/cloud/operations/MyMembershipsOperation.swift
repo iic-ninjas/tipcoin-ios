@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 CPC Ninjas. All rights reserved.
 //
 
-class MyMembershipsOperations {
+class MyMembershipsOperation {
   class func run(callback: ([Member]) -> ()) {
     PFCloud.callFunctionInBackground("myMemberships", withParameters: nil) { data, err in
       if let memberships = data as? [Member] {
