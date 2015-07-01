@@ -9,19 +9,25 @@
 import Foundation
 
 class GetGroupInfo {
-  func get(group: Group, callback: Group -> ()) {
-    PFCloud.callFunctionInBackground("groupInfo", withParameters: buildParams(group)) { rawResponse, error in
-      if let group = rawResponse as? Group {
-        callback(group)
+  class func get(groupId: String, callback: Group -> ()) {
+    PFCloud.callFunctionInBackground("groupInfo", withParameters: buildParams(groupId)) { rawResponse, error in
+      if let error = error {
+        println("error!")
+        println(error.description)
+      }
+      
+      if let group = rawResponse as? PFObject {
+        println(group.objectId)
+        println(group["members"])
+      } else if let string = rawResponse as? String {
+        println("operation string")
+      } else {
+        println("operation failed")
       }
     }
   }
   
-  func buildParams(group: Group) -> [String: String] {
-    if let objectId = group.objectId {
-      return ["group": group.objectId!]
-    } else {
-      return [:]
-    }
+  class func buildParams(groupId: String) -> [String: String] {
+    return ["group": groupId]
   }
 }
