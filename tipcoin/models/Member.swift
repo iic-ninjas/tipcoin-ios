@@ -20,11 +20,19 @@ class Member: PFObject, PFSubclassing {
     return "Member"
   }
 
-  @NSManaged var firstName: String
-  @NSManaged var lastName: String
-  @NSManaged var displayName: String
+  @NSManaged var firstName: String?
+  @NSManaged var lastName: String?
+  @NSManaged var displayName: String?
   @NSManaged var avatarUrl: String?
   @NSManaged var balance: Int
 
   @NSManaged var group: Group
+  
+  var displayBalance: String {
+    if balance == 0 { return "0" }
+    else if balance < 0 { return balance.description }
+    else {
+      return "+" + balance.description
+    }
+  }
 }

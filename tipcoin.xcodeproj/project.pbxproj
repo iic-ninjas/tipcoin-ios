@@ -19,6 +19,9 @@
 		B07F77451B43C4B800499107 /* PFObject+Equality.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F77441B43C4B800499107 /* PFObject+Equality.swift */; };
 		B0D75BAD1B44223C00D6B71B /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D75BAC1B44223C00D6B71B /* GroupVC.swift */; };
 		B0D75BAF1B44230E00D6B71B /* MemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D75BAE1B44230E00D6B71B /* MemberVC.swift */; };
+		B0D75BB11B442A9300D6B71B /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D75BB01B442A9300D6B71B /* MemberCell.swift */; };
+		B0D75BB31B442FDE00D6B71B /* SpotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D75BB21B442FDE00D6B71B /* SpotButton.swift */; };
+		B0D75BB51B44311100D6B71B /* CALayer+border.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D75BB41B44311100D6B71B /* CALayer+border.swift */; };
 		B0FB94B41B440F6B0056A8A0 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB94B31B440F6B0056A8A0 /* Spinner.swift */; };
 		B0FB94B71B4410610056A8A0 /* MembershipDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB94B61B4410610056A8A0 /* MembershipDatastore.swift */; };
 		E81EA8031B3AE294006079B8 /* GetGroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EA8021B3AE294006079B8 /* GetGroupInfo.swift */; };
@@ -53,6 +56,9 @@
 		B07F77441B43C4B800499107 /* PFObject+Equality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFObject+Equality.swift"; sourceTree = "<group>"; };
 		B0D75BAC1B44223C00D6B71B /* GroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		B0D75BAE1B44230E00D6B71B /* MemberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberVC.swift; sourceTree = "<group>"; };
+		B0D75BB01B442A9300D6B71B /* MemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
+		B0D75BB21B442FDE00D6B71B /* SpotButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotButton.swift; sourceTree = "<group>"; };
+		B0D75BB41B44311100D6B71B /* CALayer+border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+border.swift"; sourceTree = "<group>"; };
 		B0FB94B31B440F6B0056A8A0 /* Spinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		B0FB94B61B4410610056A8A0 /* MembershipDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipDatastore.swift; sourceTree = "<group>"; };
 		E81EA8021B3AE294006079B8 /* GetGroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGroupInfo.swift; path = ../getters/GetGroupInfo.swift; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 				B0FB94B31B440F6B0056A8A0 /* Spinner.swift */,
 				B0D75BAC1B44223C00D6B71B /* GroupVC.swift */,
 				B0D75BAE1B44230E00D6B71B /* MemberVC.swift */,
+				B0D75BB01B442A9300D6B71B /* MemberCell.swift */,
+				B0D75BB21B442FDE00D6B71B /* SpotButton.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -172,6 +180,7 @@
 				E89F0F411B287794002C5488 /* Supporting Files */,
 				E8F0F8921B287AED0028303E /* tipcoin-Bridging-Header.h */,
 				B05482AC1B3AE2CC008A4DA6 /* TiledBackgroundView.swift */,
+				B0D75BB41B44311100D6B71B /* CALayer+border.swift */,
 			);
 			path = tipcoin;
 			sourceTree = "<group>";
@@ -361,9 +370,12 @@
 				B05482AD1B3AE2CC008A4DA6 /* TiledBackgroundView.swift in Sources */,
 				E81EA8031B3AE294006079B8 /* GetGroupInfo.swift in Sources */,
 				B07F773F1B43C3B200499107 /* Member.swift in Sources */,
+				B0D75BB31B442FDE00D6B71B /* SpotButton.swift in Sources */,
 				B07F77451B43C4B800499107 /* PFObject+Equality.swift in Sources */,
 				B07F77411B43C43B00499107 /* Group.swift in Sources */,
+				B0D75BB51B44311100D6B71B /* CALayer+border.swift in Sources */,
 				B05482B11B3AFAAD008A4DA6 /* MenuVC.swift in Sources */,
+				B0D75BB11B442A9300D6B71B /* MemberCell.swift in Sources */,
 				B0FB94B41B440F6B0056A8A0 /* Spinner.swift in Sources */,
 				B05482AB1B3AE26A008A4DA6 /* SplashVC.swift in Sources */,
 				B0D75BAF1B44230E00D6B71B /* MemberVC.swift in Sources */,

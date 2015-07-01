@@ -9,7 +9,7 @@
 import Foundation
 
 class GetGroupInfo {
-  class func get(groupId: String, callback: Group -> ()) {
+  class func get(groupId: String, callback: (Group) -> ()) {
     PFCloud.callFunctionInBackground("groupInfo", withParameters: buildParams(groupId)) { rawResponse, error in
       if let error = error {
         println("error!")
@@ -18,6 +18,7 @@ class GetGroupInfo {
       
       if let group = rawResponse as? Group {
         println("i have group!")
+        callback(group)
       } else if let string = rawResponse as? String {
         println("operation string")
       } else {

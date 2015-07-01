@@ -174,6 +174,7 @@
                                         <connections>
                                             <outlet property="balance" destination="l69-Qz-VdC" id="lTQ-Wo-8Ib"/>
                                             <outlet property="groupName" destination="iTa-PB-wUC" id="sA6-dZ-6Nv"/>
+                                            <segue destination="kSP-o7-QSO" kind="show" identifier="showGroup" id="hsJ-6V-nAO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -263,13 +264,17 @@
                                 <color key="backgroundColor" red="0.98425167798995972" green="0.98436206579208374" blue="0.98418813943862915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.56488412618637085" green="0.56472325325012207" blue="0.58117711544036865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MEMBER_CELL" id="qVK-NZ-JIb">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MEMBER_CELL" id="qVK-NZ-JIb" customClass="MemberCell" customModule="tipcoin" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qVK-NZ-JIb" id="YQc-vH-uhH">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iel-ju-Lms">
-                                                    <rect key="frame" x="545" y="13" width="47" height="48"/>
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iel-ju-Lms">
+                                                    <rect key="frame" x="492" y="0.0" width="100" height="75"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Qgv-Rb-5Rg"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                                     <color key="textColor" red="0.56488412618637085" green="0.56472325325012207" blue="0.58117711544036865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -291,19 +296,65 @@
                                                     <color key="textColor" red="0.56488412618637085" green="0.56472325325012207" blue="0.58117711544036865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caU-MS-CmJ">
+                                                    <rect key="frame" x="500" y="20" width="92" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="95" id="2kg-RA-Tpj"/>
+                                                        <constraint firstAttribute="height" constant="35" id="jUV-Ys-24C"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                                    <state key="normal" title="Spot">
+                                                        <color key="titleColor" red="0.34137210249900818" green="0.56414622068405151" blue="0.90082186460494995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                            <color key="value" red="0.34164145588874817" green="0.5648534893989563" blue="0.90108764171600342" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="2kg-RA-Tpj"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="didClickSpot:" destination="qVK-NZ-JIb" eventType="touchUpInside" id="N5p-HH-NPp"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <gestureRecognizers/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Iel-ju-Lms" secondAttribute="bottom" id="102-4D-Mfo"/>
                                                 <constraint firstAttribute="centerY" secondItem="Iel-ju-Lms" secondAttribute="centerY" id="5ef-3l-d1g"/>
                                                 <constraint firstAttribute="centerY" secondItem="jQd-65-x71" secondAttribute="centerY" id="G9V-SA-wys"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Iel-ju-Lms" secondAttribute="trailing" id="Hg4-8z-4AY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="caU-MS-CmJ" secondAttribute="trailing" id="O6H-fb-6RB"/>
+                                                <constraint firstItem="caU-MS-CmJ" firstAttribute="top" secondItem="YQc-vH-uhH" secondAttribute="topMargin" constant="16" id="Obm-dQ-Fp9"/>
                                                 <constraint firstItem="jQd-65-x71" firstAttribute="leading" secondItem="YQc-vH-uhH" secondAttribute="leading" constant="10" id="TWn-lj-b5X"/>
-                                                <constraint firstItem="Iel-ju-Lms" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pU0-h8-oxX" secondAttribute="trailing" constant="50" id="Z6K-QK-rPd"/>
+                                                <constraint firstItem="Iel-ju-Lms" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pU0-h8-oxX" secondAttribute="trailing" id="Z6K-QK-rPd"/>
                                                 <constraint firstAttribute="centerY" secondItem="pU0-h8-oxX" secondAttribute="centerY" id="aAZ-Ff-7GM"/>
+                                                <constraint firstAttribute="centerY" secondItem="caU-MS-CmJ" secondAttribute="centerY" id="ger-W8-Ooq"/>
+                                                <constraint firstItem="Iel-ju-Lms" firstAttribute="top" secondItem="YQc-vH-uhH" secondAttribute="top" id="kAI-hm-xJa"/>
                                                 <constraint firstItem="pU0-h8-oxX" firstAttribute="leading" secondItem="jQd-65-x71" secondAttribute="trailing" constant="18" id="vUJ-B2-SHJ"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Obm-dQ-Fp9"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outlet property="avatarView" destination="jQd-65-x71" id="poc-xR-Rq5"/>
+                                            <outlet property="balanceLabel" destination="Iel-ju-Lms" id="zYJ-gT-Acn"/>
+                                            <outlet property="nameLabel" destination="pU0-h8-oxX" id="FrP-79-ndJ"/>
+                                            <outlet property="spotButton" destination="caU-MS-CmJ" id="1Qp-OJ-my1"/>
+                                            <segue destination="amn-EB-qYc" kind="show" identifier="showMember" id="PB2-8r-bNT"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -340,7 +391,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="0LS-QF-uN0" id="bKL-Cr-vdB"/>
-                        <segue destination="amn-EB-qYc" kind="show" id="l1y-QA-Osh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfJ-4h-8kQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -460,4 +510,7 @@
         <image name="positive" width="20" height="19"/>
         <image name="tip-coin-large" width="122" height="123"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hsJ-6V-nAO"/>
+    </inferredMetricsTieBreakers>
 </document>

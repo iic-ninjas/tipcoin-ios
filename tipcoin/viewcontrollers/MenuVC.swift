@@ -43,6 +43,16 @@ class MenuViewController: UIViewController {
   private func refresh() {
     self.tableView.reloadData()
   }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "showGroup" {
+      if let cell = sender as? GroupMembershipCell,
+            navVc = segue.destinationViewController as? UINavigationController,
+            vc = navVc.topViewController as? GroupViewController {
+        vc.group = cell.member?.group
+      }
+    }
+  }
 }
 
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
@@ -50,8 +60,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("GROUP_CELL", forIndexPath: indexPath) as! GroupMembershipCell
     let member = MembershipDatastore.sharedInstance.memberships[indexPath.row]
-    cell.groupName.text = member.group.name
-    cell.balance.text = member.balance.description
+    cell.member = member
     return cell
   }
   

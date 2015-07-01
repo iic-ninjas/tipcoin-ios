@@ -12,7 +12,11 @@ class MemberViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
 
-  var member: Member?
+  var member: Member? {
+    didSet {
+      self.navigationItem.title = member?.displayName
+    }
+  }
 }
 
 

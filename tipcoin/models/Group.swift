@@ -22,4 +22,6 @@ class Group: PFObject, PFSubclassing {
 
   @NSManaged var name: String
   @NSManaged var inviteToken: String
+  @NSManaged var members: [Member]
+  
 }
