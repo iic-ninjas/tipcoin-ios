@@ -22,16 +22,12 @@ class GroupViewController: UIViewController {
   
     
   @IBAction func shareInvite(sender: AnyObject) {
-    println(group)
-    println(group?.inviteUrl)
     if let url = group?.inviteUrl {
-      println(url)
       let sharingItems = [url, url.absoluteString!]
       let shareVC = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
       shareVC.excludedActivityTypes = [UIActivityTypeAddToReadingList, UIActivityTypeAssignToContact]
       presentViewController(shareVC, animated: true, completion: nil)
     }
-    
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -75,9 +71,6 @@ class GroupViewController: UIViewController {
     }
   }
   
-  func refreshUI() {
-    self.tableView.reloadData()
-  }
   
   @IBAction func backToGroup(segue: UIStoryboardSegue) {
   }
@@ -87,7 +80,6 @@ class GroupViewController: UIViewController {
 
 
 extension GroupViewController: UITableViewDataSource, UITableViewDelegate, MemberCellDelegate {
-  
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("MEMBER_CELL", forIndexPath: indexPath) as! MemberCell
@@ -110,14 +102,13 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate, Membe
   
   func spot(member: Member) {
     SpotOperation.run(self.userMember!, to: member) { transaction, err in
-      println(transaction)
-      self.refreshUI()
+      self.refresh()
     }
   }
   
   func scrollViewWillBeginDragging(scrollView: UIScrollView) {
     if let cell = self.currentSelectedCell {
-      if cell.state != .Spot {
+      if cell.state == .Spot {
         cell.resetState()
       }
     }
