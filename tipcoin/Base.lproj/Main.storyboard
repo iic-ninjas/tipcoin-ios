@@ -399,7 +399,7 @@
                     <navigationItem key="navigationItem" title="Group Name" id="KRJ-Tq-ByB">
                         <barButtonItem key="leftBarButtonItem" image="icon-burger" id="5Mu-H1-sLO">
                             <connections>
-                                <action selector="showMenu:" destination="XmI-1O-OR2" id="Q6u-dR-sCe"/>
+                                <segue destination="EQm-wQ-tZj" kind="presentation" identifier="showMenu" id="byx-F1-QzC"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icon-invite" id="y8o-qs-VPk">
@@ -513,4 +513,7 @@
         <image name="tip-coin-large" width="122" height="123"/>
         <image name="tippy-small" width="37" height="38"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="byx-F1-QzC"/>
+    </inferredMetricsTieBreakers>
 </document>

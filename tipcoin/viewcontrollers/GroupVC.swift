@@ -99,5 +99,13 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate, Membe
     }
   }
   
+  func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    if let cell = self.currentSelectedCell {
+      if cell.state == .Spot {
+        cell.resetState()
+      }
+    }
+  }
+  
 }
 
