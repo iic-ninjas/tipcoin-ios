@@ -1,5 +1,5 @@
 //
-//  Group.swift
+//  Transaction.swift
 //  tipcoin
 //
 //  Created by Bergman, Yon on 7/1/15.
@@ -8,18 +8,19 @@
 
 import Foundation
 
-class Group: PFObject, PFSubclassing {
+class Transaction : PFObject, PFSubclassing {
   override class func initialize() {
-    var onceToken: dispatch_once_t = 0;
+    var onceToken : dispatch_once_t = 0;
     dispatch_once(&onceToken) {
       self.registerSubclass()
     }
   }
-
+  
   class func parseClassName() -> String {
-    return "Group"
+    return "Transaction"
   }
-
-  @NSManaged var name: String
-  @NSManaged var inviteToken: String
+  
+  @NSManaged var from: Member
+  @NSManaged var to: Member
+  
 }

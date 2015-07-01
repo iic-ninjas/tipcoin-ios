@@ -8,17 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		AC4421BB50D7653DFC3B2610 /* libPods-tipcoin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9A22A5C5F65FA22836144F /* libPods-tipcoin.a */; };
-		E81EA8031B3AE294006079B8 /* GetGroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EA8021B3AE294006079B8 /* GetGroupInfo.swift */; };
-		E81EA8051B3AE38C006079B8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EA8041B3AE38C006079B8 /* Group.swift */; };
-		E81EA8071B3AE988006079B8 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EA8061B3AE988006079B8 /* Member.swift */; };
 		B05482AB1B3AE26A008A4DA6 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482AA1B3AE26A008A4DA6 /* SplashVC.swift */; };
 		B05482AD1B3AE2CC008A4DA6 /* TiledBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482AC1B3AE2CC008A4DA6 /* TiledBackgroundView.swift */; };
+		B05482AF1B3AF6DA008A4DA6 /* UpdateUserOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482AE1B3AF6DA008A4DA6 /* UpdateUserOperation.swift */; };
+		B05482B11B3AFAAD008A4DA6 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482B01B3AFAAD008A4DA6 /* MenuVC.swift */; };
+		B07F771E1B43C1F400499107 /* GroupMembershipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F771D1B43C1F400499107 /* GroupMembershipCell.swift */; };
+		B07F773F1B43C3B200499107 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F773E1B43C3B200499107 /* Member.swift */; };
+		B07F77411B43C43B00499107 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F77401B43C43B00499107 /* Group.swift */; };
+		B07F77431B43C47000499107 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F77421B43C47000499107 /* Transaction.swift */; };
+		B07F77451B43C4B800499107 /* PFObject+Equality.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F77441B43C4B800499107 /* PFObject+Equality.swift */; };
+		B0FB94B41B440F6B0056A8A0 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB94B31B440F6B0056A8A0 /* Spinner.swift */; };
+		B0FB94B71B4410610056A8A0 /* MembershipDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB94B61B4410610056A8A0 /* MembershipDatastore.swift */; };
+		E81EA8031B3AE294006079B8 /* GetGroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EA8021B3AE294006079B8 /* GetGroupInfo.swift */; };
 		E89F0F441B287794002C5488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F0F431B287794002C5488 /* AppDelegate.swift */; };
-		E89F0F461B287794002C5488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F0F451B287794002C5488 /* ViewController.swift */; };
 		E89F0F491B287794002C5488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89F0F471B287794002C5488 /* Main.storyboard */; };
 		E89F0F4B1B287794002C5488 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89F0F4A1B287794002C5488 /* Images.xcassets */; };
 		E89F0F4E1B287794002C5488 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89F0F4C1B287794002C5488 /* LaunchScreen.xib */; };
 		E89F0F5A1B287794002C5488 /* tipcoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F0F591B287794002C5488 /* tipcoinTests.swift */; };
+		E8E74C1B1B44200B00E2581D /* MyMembershipsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0F8971B287FA90028303E /* MyMembershipsOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,15 +40,21 @@
 
 /* Begin PBXFileReference section */
 		815BAB89D6823924610F96E9 /* Pods-tipcoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipcoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-tipcoin/Pods-tipcoin.release.xcconfig"; sourceTree = "<group>"; };
-		E81EA8021B3AE294006079B8 /* GetGroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGroupInfo.swift; path = cloud/getters/GetGroupInfo.swift; sourceTree = "<group>"; };
-		E81EA8041B3AE38C006079B8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = models/Group.swift; sourceTree = "<group>"; };
-		E81EA8061B3AE988006079B8 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Member.swift; path = models/Member.swift; sourceTree = "<group>"; };
 		B05482AA1B3AE26A008A4DA6 /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		B05482AC1B3AE2CC008A4DA6 /* TiledBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiledBackgroundView.swift; sourceTree = "<group>"; };
+		B05482AE1B3AF6DA008A4DA6 /* UpdateUserOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserOperation.swift; sourceTree = "<group>"; };
+		B05482B01B3AFAAD008A4DA6 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		B07F771D1B43C1F400499107 /* GroupMembershipCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMembershipCell.swift; sourceTree = "<group>"; };
+		B07F773E1B43C3B200499107 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		B07F77401B43C43B00499107 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		B07F77421B43C47000499107 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		B07F77441B43C4B800499107 /* PFObject+Equality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFObject+Equality.swift"; sourceTree = "<group>"; };
+		B0FB94B31B440F6B0056A8A0 /* Spinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		B0FB94B61B4410610056A8A0 /* MembershipDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipDatastore.swift; sourceTree = "<group>"; };
+		E81EA8021B3AE294006079B8 /* GetGroupInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGroupInfo.swift; path = ../getters/GetGroupInfo.swift; sourceTree = "<group>"; };
 		E89F0F3E1B287794002C5488 /* tipcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tipcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89F0F421B287794002C5488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89F0F431B287794002C5488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E89F0F451B287794002C5488 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E89F0F481B287794002C5488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E89F0F4A1B287794002C5488 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E89F0F4D1B287794002C5488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -49,6 +62,7 @@
 		E89F0F581B287794002C5488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89F0F591B287794002C5488 /* tipcoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipcoinTests.swift; sourceTree = "<group>"; };
 		E8F0F8921B287AED0028303E /* tipcoin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tipcoin-Bridging-Header.h"; sourceTree = "<group>"; };
+		E8F0F8971B287FA90028303E /* MyMembershipsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMembershipsOperation.swift; sourceTree = "<group>"; };
 		EF9A22A5C5F65FA22836144F /* libPods-tipcoin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tipcoin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F165C863A15EFB1F8A76BD1F /* Pods-tipcoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipcoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tipcoin/Pods-tipcoin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,21 +103,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E81EA8011B3AE180006079B8 /* models */ = {
-			isa = PBXGroup;
-			children = (
-				E81EA8041B3AE38C006079B8 /* Group.swift */,
-				E81EA8061B3AE988006079B8 /* Member.swift */,
-			);
-			name = models;
-			sourceTree = "<group>";
-		};
 		B05482A91B3AE250008A4DA6 /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
 				B05482AA1B3AE26A008A4DA6 /* SplashVC.swift */,
+				B05482B01B3AFAAD008A4DA6 /* MenuVC.swift */,
+				B07F771D1B43C1F400499107 /* GroupMembershipCell.swift */,
+				B0FB94B31B440F6B0056A8A0 /* Spinner.swift */,
 			);
 			path = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		B07F773D1B43C39900499107 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				B07F773E1B43C3B200499107 /* Member.swift */,
+				B07F77401B43C43B00499107 /* Group.swift */,
+				B07F77421B43C47000499107 /* Transaction.swift */,
+				B07F77441B43C4B800499107 /* PFObject+Equality.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		B0FB94B51B44104B0056A8A0 /* datastores */ = {
+			isa = PBXGroup;
+			children = (
+				B0FB94B61B4410610056A8A0 /* MembershipDatastore.swift */,
+			);
+			path = datastores;
 			sourceTree = "<group>";
 		};
 		E89F0F351B287794002C5488 = {
@@ -129,11 +156,10 @@
 		E89F0F401B287794002C5488 /* tipcoin */ = {
 			isa = PBXGroup;
 			children = (
-				E81EA8011B3AE180006079B8 /* models */,
+				B07F773D1B43C39900499107 /* models */,
 				B05482A91B3AE250008A4DA6 /* viewcontrollers */,
 				E8F0F8951B287F500028303E /* cloud */,
 				E89F0F431B287794002C5488 /* AppDelegate.swift */,
-				E89F0F451B287794002C5488 /* ViewController.swift */,
 				E89F0F471B287794002C5488 /* Main.storyboard */,
 				E89F0F4A1B287794002C5488 /* Images.xcassets */,
 				E89F0F4C1B287794002C5488 /* LaunchScreen.xib */,
@@ -172,17 +198,21 @@
 		E8F0F8951B287F500028303E /* cloud */ = {
 			isa = PBXGroup;
 			children = (
+				B0FB94B51B44104B0056A8A0 /* datastores */,
 				E8F0F8961B287F560028303E /* getters */,
 			);
-			name = cloud;
+			path = cloud;
 			sourceTree = "<group>";
 		};
 		E8F0F8961B287F560028303E /* getters */ = {
 			isa = PBXGroup;
 			children = (
 				E81EA8021B3AE294006079B8 /* GetGroupInfo.swift */,
+				E8F0F8971B287FA90028303E /* MyMembershipsOperation.swift */,
+				B05482AE1B3AF6DA008A4DA6 /* UpdateUserOperation.swift */,
 			);
 			name = getters;
+			path = operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,14 +350,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07F77431B43C47000499107 /* Transaction.swift in Sources */,
+				B0FB94B71B4410610056A8A0 /* MembershipDatastore.swift in Sources */,
 				B05482AD1B3AE2CC008A4DA6 /* TiledBackgroundView.swift in Sources */,
-				E89F0F461B287794002C5488 /* ViewController.swift in Sources */,
 				E81EA8031B3AE294006079B8 /* GetGroupInfo.swift in Sources */,
-				E81EA8051B3AE38C006079B8 /* Group.swift in Sources */,
-				E8F0F8981B287FA90028303E /* MyMembershipsOperation.swift in Sources */,
+				B07F773F1B43C3B200499107 /* Member.swift in Sources */,
+				B07F77451B43C4B800499107 /* PFObject+Equality.swift in Sources */,
+				B07F77411B43C43B00499107 /* Group.swift in Sources */,
+				B05482B11B3AFAAD008A4DA6 /* MenuVC.swift in Sources */,
+				B0FB94B41B440F6B0056A8A0 /* Spinner.swift in Sources */,
 				B05482AB1B3AE26A008A4DA6 /* SplashVC.swift in Sources */,
+				B07F771E1B43C1F400499107 /* GroupMembershipCell.swift in Sources */,
 				E89F0F441B287794002C5488 /* AppDelegate.swift in Sources */,
-				E81EA8071B3AE988006079B8 /* Member.swift in Sources */,
+				B05482AF1B3AF6DA008A4DA6 /* UpdateUserOperation.swift in Sources */,
+				E8E74C1B1B44200B00E2581D /* MyMembershipsOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
