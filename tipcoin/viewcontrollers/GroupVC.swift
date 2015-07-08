@@ -10,6 +10,9 @@ import Foundation
 
 class GroupViewController: UIViewController {
   
+  @IBOutlet private weak var groupNameLabel: UILabel!
+  @IBOutlet private weak var balanceLabel: UILabel!
+  
   @IBOutlet weak var tableView: UITableView! {
     didSet {
       refreshControl = UIRefreshControl()
@@ -36,6 +39,12 @@ class GroupViewController: UIViewController {
     }
   }
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    groupNameLabel.text = group?.name
+    balanceLabel.text = "Your Personal Balance: \(userMember!.displayBalance))"
+  }
+  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showMember" {
       if let cell = sender as? MemberCell,
@@ -54,9 +63,7 @@ class GroupViewController: UIViewController {
   
   var group: Group? {
     didSet {
-      let mineGroup = group
       if let group = group {
-        self.navigationItem.title = group.name
         self.refresh()
       }
     }

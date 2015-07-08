@@ -9,7 +9,7 @@
 import Foundation
 
 class MenuViewController: UIViewController {
-  
+
   @IBOutlet weak var spinnerView: Spinner!
   @IBOutlet weak var tableView: UITableView! {
     didSet{
@@ -18,21 +18,21 @@ class MenuViewController: UIViewController {
     }
   }
   @IBOutlet weak var avatarView: UIImageView!
-  
+
   @IBAction func logOut(sender: AnyObject) {
     PFUser.logOut()
     performSegueWithIdentifier("back", sender: nil)
   }
-  
+
   @IBAction func closeMenu(sender: AnyObject) {
-    
+
   }
-  
+
   @IBAction func backToMenu(segue: UIStoryboardSegue) {
     forceRefresh()
   }
 
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     if let user = PFUser.currentUser() {
@@ -42,27 +42,26 @@ class MenuViewController: UIViewController {
          let avatarURL = NSURL(string: urlString + "?type=large") {
           avatarView.sd_setImageWithURL(avatarURL, placeholderImage: UIImage(named: "default-avatar"))
       }
-      
+
     }
   }
-  
+
   private func forceRefresh() {
     self.spinnerView.spin()
     MembershipDatastore.sharedInstance.query() {
       self.refreshed()
     }
   }
-  
+
   private func refreshed() {
     self.tableView.reloadData()
     self.spinnerView.stop()
   }
-  
+
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showGroup" {
       if let cell = sender as? GroupMembershipCell,
-            navVc = segue.destinationViewController as? UINavigationController,
-            vc = navVc.topViewController as? GroupViewController {
+            vc = segue.destinationViewController as? GroupViewController {
         if let group = cell.member?.group {
           StateManager.sharedInstance.setCurrentGroup(group)
         }
@@ -73,7 +72,7 @@ class MenuViewController: UIViewController {
 }
 
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
-  
+
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     if indexPath.section == 1 {
       return tableView.dequeueReusableCellWithIdentifier("NEW_GROUP_CELL", forIndexPath: indexPath) as! UITableViewCell
@@ -86,7 +85,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
       return cell
     }
   }
-  
+
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if section == 1 { return 1 }
     if !MembershipDatastore.sharedInstance.loaded {
@@ -95,13 +94,13 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
       return max(groupCount(), 1)
     }
   }
-  
+
   func groupCount() -> Int {
     return MembershipDatastore.sharedInstance.memberships.count
   }
-  
+
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 2
   }
-    
+
 }
