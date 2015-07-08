@@ -42,7 +42,7 @@ class GroupViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     groupNameLabel.text = group?.name
-    balanceLabel.text = "Your Personal Balance: \(userMember!.displayBalance))"
+    balanceLabel.text = "Your Personal Balance: \(userMember!.displayBalance)"
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

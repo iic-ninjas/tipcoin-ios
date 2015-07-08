@@ -30,7 +30,7 @@ class TiledBackgroundView: UIView {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    patternView.frame = self.frame.rectByInsetting(dx: -50, dy: 0).rectByOffsetting(dx: 0, dy: 0)
+    patternView.frame = self.frame.rectByInsetting(dx: -50, dy: -30).rectByOffsetting(dx: 0, dy: 0)
   }
   
   func animate() {
