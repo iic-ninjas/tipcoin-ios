@@ -11,7 +11,12 @@ import Foundation
 class MenuViewController: UIViewController {
   
   @IBOutlet weak var spinnerView: Spinner!
-  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var tableView: UITableView! {
+    didSet{
+      tableView.rowHeight = UITableViewAutomaticDimension
+      tableView.estimatedRowHeight = 60
+    }
+  }
   @IBOutlet weak var avatarView: UIImageView!
   
   @IBAction func logOut(sender: AnyObject) {
@@ -58,13 +63,26 @@ class MenuViewController: UIViewController {
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("GROUP_CELL", forIndexPath: indexPath) as! GroupMembershipCell
-    let member = MembershipDatastore.sharedInstance.memberships[indexPath.row]
-    cell.member = member
-    return cell
+    if groupCount() == 0 {
+      return tableView.dequeueReusableCellWithIdentifier("EMPTY_CELL", forIndexPath: indexPath) as! UITableViewCell
+    } else {
+      let cell = tableView.dequeueReusableCellWithIdentifier("GROUP_CELL", forIndexPath: indexPath) as! GroupMembershipCell
+      let member = MembershipDatastore.sharedInstance.memberships[indexPath.row % groupCount()]
+      cell.member = member
+      return cell
+    }
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if !MembershipDatastore.sharedInstance.loaded {
+      return 0
+    } else {
+      return max(groupCount(), 1)
+    }
+  }
+  
+  func groupCount() -> Int {
     return MembershipDatastore.sharedInstance.memberships.count
   }
+    
 }

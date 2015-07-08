@@ -164,9 +164,11 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="iTa-PB-wUC" secondAttribute="centerY" id="7uh-wN-12u"/>
+                                                <constraint firstAttribute="bottom" secondItem="iTa-PB-wUC" secondAttribute="bottom" constant="15" id="9uE-gb-nju"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="l69-Qz-VdC" secondAttribute="trailing" constant="50" id="BPo-I4-4d4"/>
                                                 <constraint firstItem="iTa-PB-wUC" firstAttribute="leading" secondItem="equ-rn-u9f" secondAttribute="leadingMargin" constant="50" id="VKa-di-mpp"/>
                                                 <constraint firstAttribute="centerY" secondItem="l69-Qz-VdC" secondAttribute="centerY" id="emc-Sf-wil"/>
+                                                <constraint firstItem="iTa-PB-wUC" firstAttribute="top" secondItem="equ-rn-u9f" secondAttribute="top" constant="15" id="gC5-NR-ZDc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -176,6 +178,35 @@
                                             <outlet property="groupName" destination="iTa-PB-wUC" id="sA6-dZ-6Nv"/>
                                             <segue destination="kSP-o7-QSO" kind="presentation" identifier="showGroup" modalTransitionStyle="crossDissolve" id="hsJ-6V-nAO"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EMPTY_CELL" rowHeight="84" id="UyQ-aW-6Ai">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UyQ-aW-6Ai" id="QvC-yv-388">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-group-state" translatesAutoresizingMaskIntoConstraints="NO" id="MW9-EN-bi3">
+                                                    <rect key="frame" x="171" y="3" width="258" height="77"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="600" id="2vW-fa-MGW"/>
+                                                        <constraint firstAttribute="height" constant="77" id="elS-0f-gX9"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="2vW-fa-MGW"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="MW9-EN-bi3" secondAttribute="bottom" constant="3" id="Nfz-h1-jgO"/>
+                                                <constraint firstAttribute="centerY" secondItem="MW9-EN-bi3" secondAttribute="centerY" id="VzG-10-cl2"/>
+                                                <constraint firstAttribute="centerX" secondItem="MW9-EN-bi3" secondAttribute="centerX" id="ibe-IR-hWc"/>
+                                                <constraint firstItem="MW9-EN-bi3" firstAttribute="top" secondItem="QvC-yv-388" secondAttribute="top" constant="3" id="mmA-li-Mhs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -527,6 +558,7 @@
         <image name="Splash-text" width="265" height="124"/>
         <image name="Tile" width="50" height="50"/>
         <image name="default-avatar" width="75" height="75"/>
+        <image name="empty-group-state" width="258" height="77"/>
         <image name="icon-burger" width="22" height="19"/>
         <image name="icon-close" width="23" height="22"/>
         <image name="icon-invite" width="20" height="17"/>
@@ -536,6 +568,6 @@
         <image name="tippy-small" width="37" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="byx-F1-QzC"/>
+        <segue reference="lRW-g4-QGE"/>
     </inferredMetricsTieBreakers>
 </document>
