@@ -24,6 +24,7 @@
 		B07F77451B43C4B800499107 /* PFObject+Equality.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F77441B43C4B800499107 /* PFObject+Equality.swift */; };
 		B086C9251B4D876100623F45 /* InviteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086C9241B4D876100623F45 /* InviteManager.swift */; };
 		B086C9271B4D887400623F45 /* JoinGroupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086C9261B4D887400623F45 /* JoinGroupOperation.swift */; };
+		B0BAD7AF1B4D9102003BD17F /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BAD7AE1B4D9102003BD17F /* StateManager.swift */; };
 		B0D75BAD1B44223C00D6B71B /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D75BAC1B44223C00D6B71B /* GroupVC.swift */; };
 		B0D75BAF1B44230E00D6B71B /* MemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D75BAE1B44230E00D6B71B /* MemberVC.swift */; };
 		B0D75BB11B442A9300D6B71B /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D75BB01B442A9300D6B71B /* MemberCell.swift */; };
@@ -68,6 +69,7 @@
 		B07F77441B43C4B800499107 /* PFObject+Equality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFObject+Equality.swift"; sourceTree = "<group>"; };
 		B086C9241B4D876100623F45 /* InviteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteManager.swift; sourceTree = "<group>"; };
 		B086C9261B4D887400623F45 /* JoinGroupOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGroupOperation.swift; sourceTree = "<group>"; };
+		B0BAD7AE1B4D9102003BD17F /* StateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		B0D75BAC1B44223C00D6B71B /* GroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		B0D75BAE1B44230E00D6B71B /* MemberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberVC.swift; sourceTree = "<group>"; };
 		B0D75BB01B442A9300D6B71B /* MemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				B07F77421B43C47000499107 /* Transaction.swift */,
 				B07F77441B43C4B800499107 /* PFObject+Equality.swift */,
 				B086C9241B4D876100623F45 /* InviteManager.swift */,
+				B0BAD7AE1B4D9102003BD17F /* StateManager.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				B0D75BB11B442A9300D6B71B /* MemberCell.swift in Sources */,
 				B0FB94B41B440F6B0056A8A0 /* Spinner.swift in Sources */,
 				B05482AB1B3AE26A008A4DA6 /* SplashVC.swift in Sources */,
+				B0BAD7AF1B4D9102003BD17F /* StateManager.swift in Sources */,
 				B0D75BAF1B44230E00D6B71B /* MemberVC.swift in Sources */,
 				B07F771E1B43C1F400499107 /* GroupMembershipCell.swift in Sources */,
 				E89F0F441B287794002C5488 /* AppDelegate.swift in Sources */,

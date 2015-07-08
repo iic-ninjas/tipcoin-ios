@@ -63,6 +63,9 @@ class MenuViewController: UIViewController {
       if let cell = sender as? GroupMembershipCell,
             navVc = segue.destinationViewController as? UINavigationController,
             vc = navVc.topViewController as? GroupViewController {
+        if let group = cell.member?.group {
+          StateManager.sharedInstance.setCurrentGroup(group)
+        }
         vc.userMember = cell.member
       }
     }
