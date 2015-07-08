@@ -47,8 +47,7 @@ class MenuViewController: UIViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showGroup" {
       if let cell = sender as? GroupMembershipCell,
-            navVc = segue.destinationViewController as? UINavigationController,
-            vc = navVc.topViewController as? GroupViewController {
+            vc = segue.destinationViewController as? GroupViewController {
         vc.userMember = cell.member
       }
     }

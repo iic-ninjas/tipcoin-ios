@@ -10,10 +10,16 @@ import Foundation
 
 class MemberViewController: UIViewController {
   
+  @IBOutlet private weak var balanceLabel: UILabel!
   @IBOutlet weak var tippyView: UIImageView! {
     didSet {
       tippyView?.startSpinning()
     }
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    balanceLabel.text = "\(member!.displayName!)'s Balance: \(member!.displayBalance)"
   }
   
   var refreshControl: UIRefreshControl!
@@ -28,7 +34,6 @@ class MemberViewController: UIViewController {
 
   var member: Member? {
     didSet {
-      navigationItem.title = member?.displayName
       refresh()
     }
   }
