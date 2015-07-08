@@ -20,7 +20,13 @@ class GroupViewController: UIViewController {
   var refreshControl: UIRefreshControl!
   var currentSelectedCell: MemberCell?
   
-    
+  @IBOutlet weak var tippy: UIImageView! {
+    didSet{
+      tippy?.startSpinning()
+      refreshControl?.beginRefreshing()
+    }
+  }
+  
   @IBAction func shareInvite(sender: AnyObject) {
     if let url = group?.inviteUrl {
       let sharingItems = [url, url.absoluteString!]
@@ -60,11 +66,13 @@ class GroupViewController: UIViewController {
     didSet {
       tableView.reloadData()
       refreshControl.endRefreshing()
+      tippy.stopSpinning()
     }
   }
   
   func refresh() {
     if let group = group {
+      tippy?.startSpinning()
       GetGroupInfo.get(group.objectId!) { group in
         self.members = group.sortedMembers
       }
@@ -106,12 +114,12 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate, Membe
     }
   }
   
-  func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-    if let cell = self.currentSelectedCell {
-      if cell.state == .Spot {
-        cell.resetState()
-      }
-    }
+  func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
+//    if let cell = self.currentSelectedCell {
+//      if cell.state == .Spot {
+//        cell.resetState()
+//      }
+//    }
   }
   
 }

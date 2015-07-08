@@ -9,6 +9,13 @@
 import Foundation
 
 class Transaction : PFObject, PFSubclassing {
+  
+  private static let dateFormatter: NSDateFormatter = {
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "dd/MM"
+    return formatter
+  }()
+  
   override class func initialize() {
     var onceToken : dispatch_once_t = 0;
     dispatch_once(&onceToken) {
@@ -22,5 +29,14 @@ class Transaction : PFObject, PFSubclassing {
   
   @NSManaged var from: Member
   @NSManaged var to: Member
+  
+  lazy var displayDate: String = {
+    if let date = self.createdAt {
+      return Transaction.dateFormatter.stringFromDate(date)
+    } else {
+      return ""
+    }
+  }()
+  
   
 }

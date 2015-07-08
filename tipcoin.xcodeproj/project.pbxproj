@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AC4421BB50D7653DFC3B2610 /* libPods-tipcoin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9A22A5C5F65FA22836144F /* libPods-tipcoin.a */; };
 		B019929B1B444E6F005A019D /* SpotOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B019929A1B444E6F005A019D /* SpotOperation.swift */; };
+		B04EFE911B4D55D6000B6DC1 /* MemberInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04EFE901B4D55D6000B6DC1 /* MemberInfoOperation.swift */; };
+		B04EFE931B4D5690000B6DC1 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04EFE921B4D5690000B6DC1 /* TransactionCell.swift */; };
 		B05482AB1B3AE26A008A4DA6 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482AA1B3AE26A008A4DA6 /* SplashVC.swift */; };
 		B05482AD1B3AE2CC008A4DA6 /* TiledBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482AC1B3AE2CC008A4DA6 /* TiledBackgroundView.swift */; };
 		B05482AF1B3AF6DA008A4DA6 /* UpdateUserOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482AE1B3AF6DA008A4DA6 /* UpdateUserOperation.swift */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		815BAB89D6823924610F96E9 /* Pods-tipcoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipcoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-tipcoin/Pods-tipcoin.release.xcconfig"; sourceTree = "<group>"; };
 		B019929A1B444E6F005A019D /* SpotOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotOperation.swift; sourceTree = "<group>"; };
+		B04EFE901B4D55D6000B6DC1 /* MemberInfoOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoOperation.swift; sourceTree = "<group>"; };
+		B04EFE921B4D5690000B6DC1 /* TransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		B05482AA1B3AE26A008A4DA6 /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		B05482AC1B3AE2CC008A4DA6 /* TiledBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiledBackgroundView.swift; sourceTree = "<group>"; };
 		B05482AE1B3AF6DA008A4DA6 /* UpdateUserOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserOperation.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				B0D75BAE1B44230E00D6B71B /* MemberVC.swift */,
 				B0D75BB01B442A9300D6B71B /* MemberCell.swift */,
 				B0D75BB21B442FDE00D6B71B /* SpotButton.swift */,
+				B04EFE921B4D5690000B6DC1 /* TransactionCell.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				E8F0F8971B287FA90028303E /* MyMembershipsOperation.swift */,
 				B05482AE1B3AF6DA008A4DA6 /* UpdateUserOperation.swift */,
 				B019929A1B444E6F005A019D /* SpotOperation.swift */,
+				B04EFE901B4D55D6000B6DC1 /* MemberInfoOperation.swift */,
 			);
 			name = getters;
 			path = operations;
@@ -368,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B04EFE911B4D55D6000B6DC1 /* MemberInfoOperation.swift in Sources */,
 				B07F77431B43C47000499107 /* Transaction.swift in Sources */,
 				B0FB94B71B4410610056A8A0 /* MembershipDatastore.swift in Sources */,
 				B05482AD1B3AE2CC008A4DA6 /* TiledBackgroundView.swift in Sources */,
@@ -379,6 +386,7 @@
 				B0D75BB51B44311100D6B71B /* CALayer+border.swift in Sources */,
 				B019929B1B444E6F005A019D /* SpotOperation.swift in Sources */,
 				B05482B11B3AFAAD008A4DA6 /* MenuVC.swift in Sources */,
+				B04EFE931B4D5690000B6DC1 /* TransactionCell.swift in Sources */,
 				B0D75BB11B442A9300D6B71B /* MemberCell.swift in Sources */,
 				B0FB94B41B440F6B0056A8A0 /* Spinner.swift in Sources */,
 				B05482AB1B3AE26A008A4DA6 /* SplashVC.swift in Sources */,

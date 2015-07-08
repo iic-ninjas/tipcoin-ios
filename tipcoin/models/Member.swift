@@ -28,6 +28,19 @@ class Member: PFObject, PFSubclassing {
   
   @NSManaged var user: PFUser?
   @NSManaged var group: Group
+  @NSManaged var transactions: [Transaction]
+  
+  var sortedTransactions: [Transaction] {
+    return transactions.sorted { left, right in
+      if let lCreatedAt = left.createdAt, rCreatedAt = right.createdAt {
+        return lCreatedAt.compare(rCreatedAt) == NSComparisonResult.OrderedDescending
+      } else {
+        return false
+      }
+    }
+  }
+
+
   
   var displayBalance: String {
     if balance == 0 { return "0" }

@@ -410,6 +410,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="0LS-QF-uN0" id="bKL-Cr-vdB"/>
+                        <outlet property="tippy" destination="2bh-8I-Qn7" id="6GD-Og-1aB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfJ-4h-8kQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -432,7 +433,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" red="0.98425167798995972" green="0.98436206579208374" blue="0.98418813943862915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TRANSACTION_CELL" id="wgA-QY-4Dl">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TRANSACTION_CELL" id="wgA-QY-4Dl" customClass="TransactionCell" customModule="tipcoin" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wgA-QY-4Dl" id="Cy9-Dv-r7x">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -468,6 +469,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="Mzd-Jq-isy" id="ZuZ-4w-f0Q"/>
+                                            <outlet property="indicatorImage" destination="k6p-2p-7zd" id="IfI-F9-UMe"/>
+                                            <outlet property="nameLabel" destination="4bs-BV-mly" id="gvl-hX-G09"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -475,14 +481,29 @@
                                     <outlet property="delegate" destination="amn-EB-qYc" id="R6a-qo-pmE"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tippy-small" translatesAutoresizingMaskIntoConstraints="NO" id="q6U-g2-FiH">
+                                <rect key="frame" x="0.0" y="480" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6yc-cz-rGC"/>
+                                    <constraint firstAttribute="width" constant="600" id="UT2-TT-kJ3"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UT2-TT-kJ3"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="b6z-g9-DQe" firstAttribute="top" secondItem="jWF-I2-IAJ" secondAttribute="bottom" id="2PL-3h-0MW"/>
+                            <constraint firstItem="b6z-g9-DQe" firstAttribute="top" secondItem="q6U-g2-FiH" secondAttribute="bottom" constant="12" id="9pX-kK-aj0"/>
+                            <constraint firstItem="q6U-g2-FiH" firstAttribute="leading" secondItem="xR7-Xi-Azt" secondAttribute="leading" id="eiD-Ns-7gF"/>
                             <constraint firstItem="jWF-I2-IAJ" firstAttribute="leading" secondItem="xR7-Xi-Azt" secondAttribute="leading" id="eou-gU-KR5"/>
                             <constraint firstItem="jWF-I2-IAJ" firstAttribute="top" secondItem="tI9-fh-3Ew" secondAttribute="bottom" id="hUW-LJ-KP0"/>
                             <constraint firstAttribute="trailing" secondItem="jWF-I2-IAJ" secondAttribute="trailing" id="pZT-7P-U8y"/>
                             <constraint firstItem="jWF-I2-IAJ" firstAttribute="leading" secondItem="xR7-Xi-Azt" secondAttribute="leadingMargin" id="sYm-69-KVF"/>
+                            <constraint firstAttribute="trailing" secondItem="q6U-g2-FiH" secondAttribute="trailing" id="xMz-ZN-z4I"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -493,6 +514,7 @@
                     <navigationItem key="navigationItem" title="Member Name" id="PQs-Hp-OJh"/>
                     <connections>
                         <outlet property="tableView" destination="jWF-I2-IAJ" id="iG9-DR-t8v"/>
+                        <outlet property="tippyView" destination="q6U-g2-FiH" id="e7M-vJ-NgT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HD0-jo-Fr8" userLabel="First Responder" sceneMemberID="firstResponder"/>

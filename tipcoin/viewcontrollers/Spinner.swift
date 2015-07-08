@@ -45,3 +45,23 @@ class Spinner: UIImageView {
   }
   
 }
+
+extension UIView {
+
+  func startSpinning(spin: Double = 0) {
+    self.tag = 1
+    UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
+      let rotation = CGFloat(M_PI * spin * 2.0 / 3.0)
+      self.transform = CGAffineTransformMakeRotation(rotation)
+      }, completion: { _ in
+        if self.tag > 0 {
+          self.startSpinning(spin: (spin + 1) % 3 )
+        }
+    })
+  }
+  
+  func stopSpinning() {
+    self.tag = 0
+    self.transform = CGAffineTransformIdentity
+  }
+}
