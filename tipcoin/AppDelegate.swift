@@ -28,6 +28,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     openURL url: NSURL,
     sourceApplication: String?,
     annotation: AnyObject?) -> Bool {
+      if url.scheme == "tipcoin" && url.host == "invite"{
+        let groupId = url.path?.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "/"))
+        let inviteToken = url.fragment
+        
+        InviteManager.sharedInstance.receivedInviteWithGroupId(groupId, inviteToken: inviteToken)
+        if let user = PFUser.currentUser() {
+          InviteManager.sharedInstance.joinGroup() { group, err in
+            // show alert box
+            // refresh menu page
+          }
+          
+        }
+        
+        return true
+      }
       return FBSDKApplicationDelegate.sharedInstance().application(application,
         openURL: url,
         sourceApplication: sourceApplication,

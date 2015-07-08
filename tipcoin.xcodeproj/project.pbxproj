@@ -22,6 +22,8 @@
 		B07F77411B43C43B00499107 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F77401B43C43B00499107 /* Group.swift */; };
 		B07F77431B43C47000499107 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F77421B43C47000499107 /* Transaction.swift */; };
 		B07F77451B43C4B800499107 /* PFObject+Equality.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F77441B43C4B800499107 /* PFObject+Equality.swift */; };
+		B086C9251B4D876100623F45 /* InviteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086C9241B4D876100623F45 /* InviteManager.swift */; };
+		B086C9271B4D887400623F45 /* JoinGroupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B086C9261B4D887400623F45 /* JoinGroupOperation.swift */; };
 		B0D75BAD1B44223C00D6B71B /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D75BAC1B44223C00D6B71B /* GroupVC.swift */; };
 		B0D75BAF1B44230E00D6B71B /* MemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D75BAE1B44230E00D6B71B /* MemberVC.swift */; };
 		B0D75BB11B442A9300D6B71B /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D75BB01B442A9300D6B71B /* MemberCell.swift */; };
@@ -64,6 +66,8 @@
 		B07F77401B43C43B00499107 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		B07F77421B43C47000499107 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		B07F77441B43C4B800499107 /* PFObject+Equality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFObject+Equality.swift"; sourceTree = "<group>"; };
+		B086C9241B4D876100623F45 /* InviteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteManager.swift; sourceTree = "<group>"; };
+		B086C9261B4D887400623F45 /* JoinGroupOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGroupOperation.swift; sourceTree = "<group>"; };
 		B0D75BAC1B44223C00D6B71B /* GroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		B0D75BAE1B44230E00D6B71B /* MemberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberVC.swift; sourceTree = "<group>"; };
 		B0D75BB01B442A9300D6B71B /* MemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 				B07F77401B43C43B00499107 /* Group.swift */,
 				B07F77421B43C47000499107 /* Transaction.swift */,
 				B07F77441B43C4B800499107 /* PFObject+Equality.swift */,
+				B086C9241B4D876100623F45 /* InviteManager.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				B019929A1B444E6F005A019D /* SpotOperation.swift */,
 				B04EFE901B4D55D6000B6DC1 /* MemberInfoOperation.swift */,
 				B04EFE971B4D6D63000B6DC1 /* CreateGroupOperation.swift */,
+				B086C9261B4D887400623F45 /* JoinGroupOperation.swift */,
 			);
 			name = getters;
 			path = operations;
@@ -383,6 +389,7 @@
 				B04EFE911B4D55D6000B6DC1 /* MemberInfoOperation.swift in Sources */,
 				B07F77431B43C47000499107 /* Transaction.swift in Sources */,
 				B0FB94B71B4410610056A8A0 /* MembershipDatastore.swift in Sources */,
+				B086C9271B4D887400623F45 /* JoinGroupOperation.swift in Sources */,
 				B05482AD1B3AE2CC008A4DA6 /* TiledBackgroundView.swift in Sources */,
 				E81EA8031B3AE294006079B8 /* GetGroupInfo.swift in Sources */,
 				B07F773F1B43C3B200499107 /* Member.swift in Sources */,
@@ -393,6 +400,7 @@
 				B019929B1B444E6F005A019D /* SpotOperation.swift in Sources */,
 				B05482B11B3AFAAD008A4DA6 /* MenuVC.swift in Sources */,
 				B04EFE931B4D5690000B6DC1 /* TransactionCell.swift in Sources */,
+				B086C9251B4D876100623F45 /* InviteManager.swift in Sources */,
 				B0D75BB11B442A9300D6B71B /* MemberCell.swift in Sources */,
 				B0FB94B41B440F6B0056A8A0 /* Spinner.swift in Sources */,
 				B05482AB1B3AE26A008A4DA6 /* SplashVC.swift in Sources */,

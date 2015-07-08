@@ -67,8 +67,27 @@ class SplashViewController: UIViewController {
           user.fetchInBackground()
         }
       }
-      self.performSegueWithIdentifier("showMenu", sender: nil)
+      if InviteManager.sharedInstance.hasInvite() {
+        InviteManager.sharedInstance.joinGroup() { group, err in
+          if let group = group as? Group {
+          let vc = UIAlertController(title: "Joined Group", message: "Successfully join the group \"\(group.name)\"", preferredStyle: UIAlertControllerStyle.Alert)
+            vc.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { _ in
+              self.navigateToMenu()
+            }))
+            self.presentViewController(vc, animated: true, completion: nil)
+          } else {
+            self.navigateToMenu()
+          }
+        }
+      } else {
+        self.navigateToMenu()
+      }
+
     }
+  }
+  
+  private func navigateToMenu() {
+    self.performSegueWithIdentifier("showMenu", sender: nil)
   }
   
   @IBAction func goToSideMenu(segue: UIStoryboardSegue) {
