@@ -148,7 +148,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="422-Up-gHX" id="equ-rn-u9f">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTa-PB-wUC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTa-PB-wUC">
                                                     <rect key="frame" x="58" y="15" width="134" height="29"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                                     <color key="textColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -169,6 +169,7 @@
                                                 <constraint firstItem="iTa-PB-wUC" firstAttribute="leading" secondItem="equ-rn-u9f" secondAttribute="leadingMargin" constant="50" id="VKa-di-mpp"/>
                                                 <constraint firstAttribute="centerY" secondItem="l69-Qz-VdC" secondAttribute="centerY" id="emc-Sf-wil"/>
                                                 <constraint firstItem="iTa-PB-wUC" firstAttribute="top" secondItem="equ-rn-u9f" secondAttribute="top" constant="15" id="gC5-NR-ZDc"/>
+                                                <constraint firstItem="l69-Qz-VdC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iTa-PB-wUC" secondAttribute="trailing" id="tUe-Qf-HRR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -179,7 +180,7 @@
                                             <segue destination="kSP-o7-QSO" kind="presentation" identifier="showGroup" modalTransitionStyle="crossDissolve" id="hsJ-6V-nAO"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EMPTY_CELL" rowHeight="84" id="UyQ-aW-6Ai">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EMPTY_CELL" rowHeight="84" id="UyQ-aW-6Ai">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UyQ-aW-6Ai" id="QvC-yv-388">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -203,6 +204,49 @@
                                                 <constraint firstAttribute="centerY" secondItem="MW9-EN-bi3" secondAttribute="centerY" id="VzG-10-cl2"/>
                                                 <constraint firstAttribute="centerX" secondItem="MW9-EN-bi3" secondAttribute="centerX" id="ibe-IR-hWc"/>
                                                 <constraint firstItem="MW9-EN-bi3" firstAttribute="top" secondItem="QvC-yv-388" secondAttribute="top" constant="3" id="mmA-li-Mhs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NEW_GROUP_CELL" rowHeight="84" id="seB-UI-v6U">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="seB-UI-v6U" id="UNP-ay-RCc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejf-RW-fwb">
+                                                    <rect key="frame" x="219" y="24" width="163" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="95" id="WWg-Yb-EO6"/>
+                                                        <constraint firstAttribute="height" constant="35" id="sZk-Km-Rw0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                                    <state key="normal" title="New Group">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                            <color key="value" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="WWg-Yb-EO6"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <connections>
+                                                        <segue destination="3jg-YL-KUX" kind="presentation" identifier="new_group" modalTransitionStyle="crossDissolve" id="qz7-hT-ccc"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="Ejf-RW-fwb" secondAttribute="centerX" id="A1d-vq-FhW"/>
+                                                <constraint firstItem="Ejf-RW-fwb" firstAttribute="top" secondItem="UNP-ay-RCc" secondAttribute="topMargin" constant="16" id="jL3-IP-NMh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ejf-RW-fwb" secondAttribute="bottom" constant="16" id="qUn-fK-PCL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -277,6 +321,114 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAM-Mc-HcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1011" y="1886"/>
+        </scene>
+        <!--New Group View Controller-->
+        <scene sceneID="wi2-Ic-ncW">
+            <objects>
+                <viewController id="3jg-YL-KUX" customClass="NewGroupViewController" customModule="tipcoin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cJY-OT-B15"/>
+                        <viewControllerLayoutGuide type="bottom" id="EPG-46-NI2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3lj-6X-gEF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOV-gG-dvA">
+                                <rect key="frame" x="0.0" y="-2" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="WRz-hm-GTF"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.3147277832" green="0.75386148689999999" blue="0.3707537353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="New Group" id="YXy-YE-eol">
+                                        <barButtonItem key="leftBarButtonItem" image="icon-close" id="rXW-wP-ocD">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="I8r-hf-AyI" kind="unwind" identifier="backToMenu" unwindAction="backToMenu:" id="XTg-TE-CJA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MT-gp-Sbn">
+                                <rect key="frame" x="208" y="188" width="185" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="Mss-F0-1s7"/>
+                                    <constraint firstAttribute="height" constant="35" id="ws9-TG-8ms"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Create Group">
+                                    <color key="titleColor" red="0.3413721025" green="0.56414622069999998" blue="0.90082186460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" red="0.3413721025" green="0.56414622069999998" blue="0.90082186460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Mss-F0-1s7"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="createGroup:" destination="3jg-YL-KUX" eventType="touchUpInside" id="AoI-hL-QRD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a name for your group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp6-2a-JDl">
+                                <rect key="frame" x="192" y="87" width="216" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKF-dL-ArD" customClass="Spinner" customModule="tipcoin" customModuleProvider="target">
+                                <rect key="frame" x="546" y="141" width="14" height="14"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="012-pp-JNX"/>
+                                    <constraint firstAttribute="width" constant="14" id="mkO-Kk-iDI"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose a good name for your group" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8M1-x5-Ykk">
+                                <rect key="frame" x="30" y="133" width="540" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98425167798995972" green="0.98436206579208374" blue="0.98418813943862915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XKF-dL-ArD" firstAttribute="centerY" secondItem="8M1-x5-Ykk" secondAttribute="centerY" id="1l2-rj-OQl"/>
+                            <constraint firstItem="lOV-gG-dvA" firstAttribute="leading" secondItem="3lj-6X-gEF" secondAttribute="leading" id="5oi-St-GWx"/>
+                            <constraint firstAttribute="centerX" secondItem="lp6-2a-JDl" secondAttribute="centerX" id="Clk-20-XUM"/>
+                            <constraint firstItem="9MT-gp-Sbn" firstAttribute="top" secondItem="8M1-x5-Ykk" secondAttribute="bottom" constant="25" id="Ks9-i9-KKF"/>
+                            <constraint firstItem="lp6-2a-JDl" firstAttribute="top" secondItem="lOV-gG-dvA" secondAttribute="bottom" constant="25" id="R5U-F1-aRL"/>
+                            <constraint firstItem="8M1-x5-Ykk" firstAttribute="top" secondItem="lp6-2a-JDl" secondAttribute="bottom" constant="25" id="VYa-hn-udr"/>
+                            <constraint firstAttribute="centerX" secondItem="9MT-gp-Sbn" secondAttribute="centerX" id="ZMc-F4-N4X"/>
+                            <constraint firstAttribute="trailing" secondItem="8M1-x5-Ykk" secondAttribute="trailing" constant="30" id="e8h-AQ-f4D"/>
+                            <constraint firstItem="8M1-x5-Ykk" firstAttribute="leading" secondItem="3lj-6X-gEF" secondAttribute="leading" constant="30" id="iGg-O7-lki"/>
+                            <constraint firstItem="lOV-gG-dvA" firstAttribute="top" secondItem="cJY-OT-B15" secondAttribute="bottom" constant="-22" id="pdf-Dk-dRp"/>
+                            <constraint firstItem="XKF-dL-ArD" firstAttribute="trailing" secondItem="8M1-x5-Ykk" secondAttribute="trailing" constant="-10" id="vaB-WO-tCP"/>
+                            <constraint firstAttribute="trailing" secondItem="lOV-gG-dvA" secondAttribute="trailing" id="vgc-dd-oGY"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="button" destination="9MT-gp-Sbn" id="Btu-xa-oI1"/>
+                        <outlet property="groupName" destination="8M1-x5-Ykk" id="mGi-8u-8g0"/>
+                        <outlet property="spinnerView" destination="XKF-dL-ArD" id="Bv3-WB-Dn7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEd-bK-XWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="I8r-hf-AyI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="1130"/>
         </scene>
         <!--Group Name-->
         <scene sceneID="beX-F4-FBm">
@@ -446,7 +598,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfJ-4h-8kQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1751" y="1886"/>
+            <point key="canvasLocation" x="1741" y="1886"/>
         </scene>
         <!--Member Name-->
         <scene sceneID="mON-mE-iiZ">
@@ -568,6 +720,6 @@
         <image name="tippy-small" width="37" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lRW-g4-QGE"/>
+        <segue reference="byx-F1-QzC"/>
     </inferredMetricsTieBreakers>
 </document>

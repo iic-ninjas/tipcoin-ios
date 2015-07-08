@@ -11,6 +11,8 @@
 		B019929B1B444E6F005A019D /* SpotOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B019929A1B444E6F005A019D /* SpotOperation.swift */; };
 		B04EFE911B4D55D6000B6DC1 /* MemberInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04EFE901B4D55D6000B6DC1 /* MemberInfoOperation.swift */; };
 		B04EFE931B4D5690000B6DC1 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04EFE921B4D5690000B6DC1 /* TransactionCell.swift */; };
+		B04EFE961B4D6CFC000B6DC1 /* NewGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04EFE951B4D6CFC000B6DC1 /* NewGroupVC.swift */; };
+		B04EFE981B4D6D63000B6DC1 /* CreateGroupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04EFE971B4D6D63000B6DC1 /* CreateGroupOperation.swift */; };
 		B05482AB1B3AE26A008A4DA6 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482AA1B3AE26A008A4DA6 /* SplashVC.swift */; };
 		B05482AD1B3AE2CC008A4DA6 /* TiledBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482AC1B3AE2CC008A4DA6 /* TiledBackgroundView.swift */; };
 		B05482AF1B3AF6DA008A4DA6 /* UpdateUserOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05482AE1B3AF6DA008A4DA6 /* UpdateUserOperation.swift */; };
@@ -51,6 +53,8 @@
 		B019929A1B444E6F005A019D /* SpotOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotOperation.swift; sourceTree = "<group>"; };
 		B04EFE901B4D55D6000B6DC1 /* MemberInfoOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoOperation.swift; sourceTree = "<group>"; };
 		B04EFE921B4D5690000B6DC1 /* TransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		B04EFE951B4D6CFC000B6DC1 /* NewGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupVC.swift; sourceTree = "<group>"; };
+		B04EFE971B4D6D63000B6DC1 /* CreateGroupOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupOperation.swift; sourceTree = "<group>"; };
 		B05482AA1B3AE26A008A4DA6 /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		B05482AC1B3AE2CC008A4DA6 /* TiledBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiledBackgroundView.swift; sourceTree = "<group>"; };
 		B05482AE1B3AF6DA008A4DA6 /* UpdateUserOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserOperation.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				B0D75BB01B442A9300D6B71B /* MemberCell.swift */,
 				B0D75BB21B442FDE00D6B71B /* SpotButton.swift */,
 				B04EFE921B4D5690000B6DC1 /* TransactionCell.swift */,
+				B04EFE951B4D6CFC000B6DC1 /* NewGroupVC.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				B05482AE1B3AF6DA008A4DA6 /* UpdateUserOperation.swift */,
 				B019929A1B444E6F005A019D /* SpotOperation.swift */,
 				B04EFE901B4D55D6000B6DC1 /* MemberInfoOperation.swift */,
+				B04EFE971B4D6D63000B6DC1 /* CreateGroupOperation.swift */,
 			);
 			name = getters;
 			path = operations;
@@ -393,9 +399,11 @@
 				B0D75BAF1B44230E00D6B71B /* MemberVC.swift in Sources */,
 				B07F771E1B43C1F400499107 /* GroupMembershipCell.swift in Sources */,
 				E89F0F441B287794002C5488 /* AppDelegate.swift in Sources */,
+				B04EFE961B4D6CFC000B6DC1 /* NewGroupVC.swift in Sources */,
 				B0D75BAD1B44223C00D6B71B /* GroupVC.swift in Sources */,
 				B05482AF1B3AF6DA008A4DA6 /* UpdateUserOperation.swift in Sources */,
 				E8E74C1B1B44200B00E2581D /* MyMembershipsOperation.swift in Sources */,
+				B04EFE981B4D6D63000B6DC1 /* CreateGroupOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

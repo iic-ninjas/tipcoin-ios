@@ -28,14 +28,15 @@ class MenuViewController: UIViewController {
     
   }
   
+  @IBAction func backToMenu(segue: UIStoryboardSegue) {
+    forceRefresh()
+  }
+
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     if let user = PFUser.currentUser() {
-      self.spinnerView.spin()
-      MembershipDatastore.sharedInstance.query() {
-        self.spinnerView.stop()
-        self.refresh()
-      }
+      self.forceRefresh()
 
       if let urlString = user["avatarUrl"] as? String,
          let avatarURL = NSURL(string: urlString + "?type=large") {
@@ -45,8 +46,16 @@ class MenuViewController: UIViewController {
     }
   }
   
-  private func refresh() {
+  private func forceRefresh() {
+    self.spinnerView.spin()
+    MembershipDatastore.sharedInstance.query() {
+      self.refreshed()
+    }
+  }
+  
+  private func refreshed() {
     self.tableView.reloadData()
+    self.spinnerView.stop()
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -63,7 +72,9 @@ class MenuViewController: UIViewController {
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    if groupCount() == 0 {
+    if indexPath.section == 1 {
+      return tableView.dequeueReusableCellWithIdentifier("NEW_GROUP_CELL", forIndexPath: indexPath) as! UITableViewCell
+    } else if groupCount() == 0 {
       return tableView.dequeueReusableCellWithIdentifier("EMPTY_CELL", forIndexPath: indexPath) as! UITableViewCell
     } else {
       let cell = tableView.dequeueReusableCellWithIdentifier("GROUP_CELL", forIndexPath: indexPath) as! GroupMembershipCell
@@ -74,6 +85,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if section == 1 { return 1 }
     if !MembershipDatastore.sharedInstance.loaded {
       return 0
     } else {
@@ -83,6 +95,10 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
   
   func groupCount() -> Int {
     return MembershipDatastore.sharedInstance.memberships.count
+  }
+  
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 2
   }
     
 }
