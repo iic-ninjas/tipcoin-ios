@@ -27,21 +27,13 @@ class Spinner: UIImageView {
   }
   
   func stop() {
-    shouldSpin = false
+    stopSpinning()
     hidden = true
   }
   
   func spin() {
-    if (shouldSpin) { return }
-    shouldSpin = true
     hidden = false
-    UIView.animateWithDuration(fullSpinDuration / 3, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
-      self.transform = CGAffineTransformRotate(self.transform, self.thirdRotation)
-      }, completion: { [weak self] _ in
-        if self?.shouldSpin == true {
-          self?.spin()
-        }
-      })
+    startSpinning()
   }
   
 }
