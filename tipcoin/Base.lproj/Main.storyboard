@@ -101,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY GROUPS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMJ-P2-RvI">
-                                <rect key="frame" x="249" y="165" width="102.5" height="20"/>
+                                <rect key="frame" x="249" y="165" width="103" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -149,13 +149,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTa-PB-wUC">
-                                                    <rect key="frame" x="58" y="15" width="133.5" height="29"/>
+                                                    <rect key="frame" x="58" y="15" width="134" height="29"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                                     <color key="textColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="highlightedColor" red="0.3147277832" green="0.75386148689999999" blue="0.3707537353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l69-Qz-VdC">
-                                                    <rect key="frame" x="514" y="15" width="28" height="28.5"/>
+                                                    <rect key="frame" x="514" y="15" width="28" height="29"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                                     <color key="textColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="highlightedColor" red="0.3147277832" green="0.75386148689999999" blue="0.3707537353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -338,7 +338,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="New Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gG7-gS-MfL">
-                                        <rect key="frame" x="241" y="33.5" width="117.5" height="24"/>
+                                        <rect key="frame" x="241" y="34" width="118" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -365,7 +365,7 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MT-gp-Sbn">
-                                <rect key="frame" x="208" y="205.5" width="185" height="35"/>
+                                <rect key="frame" x="208" y="206" width="185" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="Mss-F0-1s7"/>
                                     <constraint firstAttribute="height" constant="35" id="ws9-TG-8ms"/>
@@ -392,13 +392,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a name for your group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp6-2a-JDl">
-                                <rect key="frame" x="192.5" y="105" width="215.5" height="20.5"/>
+                                <rect key="frame" x="193" y="105" width="216" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKF-dL-ArD" customClass="Spinner" customModule="tipcoin" customModuleProvider="target">
-                                <rect key="frame" x="546" y="158.5" width="14" height="14"/>
+                                <rect key="frame" x="546" y="159" width="14" height="14"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="012-pp-JNX"/>
@@ -406,7 +406,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose a good name for your group" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8M1-x5-Ykk">
-                                <rect key="frame" x="30" y="150.5" width="540" height="30"/>
+                                <rect key="frame" x="30" y="151" width="540" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                             </textField>
@@ -571,11 +571,18 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JI6-Xb-kGk" userLabel="Top Bar" customClass="TiledBackgroundView" customModule="tipcoin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="130"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Personal Balance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKW-KA-4A4">
-                                        <rect key="frame" x="203" y="93" width="194" height="24"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Personal Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKW-KA-4A4">
+                                        <rect key="frame" x="50" y="85" width="500" height="40"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="8nU-UM-DKq"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="9UO-xg-KNV" appends="YES" id="fCw-VQ-J57"/>
+                                        </connections>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hj-Xf-21f" userLabel="Menu Button">
                                         <rect key="frame" x="5" y="20" width="50" height="50"/>
@@ -603,8 +610,8 @@
                                             <action selector="shareInvite:" destination="XmI-1O-OR2" eventType="touchUpInside" id="bCp-jw-0mf"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrO-7P-gI5">
-                                        <rect key="frame" x="241" y="33.5" width="117.5" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Group Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrO-7P-gI5">
+                                        <rect key="frame" x="241" y="34" width="118" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -612,11 +619,13 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.3147277832" green="0.75386148689999999" blue="0.3707537353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="SKW-KA-4A4" secondAttribute="bottom" constant="13" id="1Md-3A-7Pe"/>
+                                    <constraint firstAttribute="bottom" secondItem="SKW-KA-4A4" secondAttribute="bottom" constant="5" id="1Md-3A-7Pe"/>
                                     <constraint firstAttribute="centerX" secondItem="SKW-KA-4A4" secondAttribute="centerX" id="2Rg-Ql-jQU"/>
                                     <constraint firstAttribute="centerX" secondItem="OrO-7P-gI5" secondAttribute="centerX" id="Bm0-mG-Lvs"/>
                                     <constraint firstItem="5oj-0q-jqP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OrO-7P-gI5" secondAttribute="trailing" id="IWP-Ye-b8h"/>
                                     <constraint firstItem="6Hj-Xf-21f" firstAttribute="leading" secondItem="JI6-Xb-kGk" secondAttribute="leading" constant="5" id="N62-vs-y6m"/>
+                                    <constraint firstItem="SKW-KA-4A4" firstAttribute="leading" secondItem="JI6-Xb-kGk" secondAttribute="leading" constant="50" id="QiE-IR-1mC"/>
+                                    <constraint firstAttribute="trailing" secondItem="SKW-KA-4A4" secondAttribute="trailing" constant="50" id="SED-nU-0fr"/>
                                     <constraint firstItem="6Hj-Xf-21f" firstAttribute="leading" secondItem="JI6-Xb-kGk" secondAttribute="leadingMargin" constant="8" id="cST-R1-MMs"/>
                                     <constraint firstAttribute="trailing" secondItem="5oj-0q-jqP" secondAttribute="trailing" constant="5" id="gxl-Vc-og9"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="5oj-0q-jqP" secondAttribute="trailing" constant="8" id="jOg-Xx-hk6"/>
@@ -677,6 +686,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfJ-4h-8kQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9UO-xg-KNV">
+                    <connections>
+                        <segue destination="amn-EB-qYc" kind="show" identifier="showSelf" id="ZWg-ez-hbs"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="941" y="2226"/>
         </scene>
@@ -759,10 +773,24 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWX-me-mb1" userLabel="Top Bar" customClass="TiledBackgroundView" customModule="tipcoin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tippy's Balance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rES-PA-cpC">
-                                        <rect key="frame" x="231" y="73" width="138" height="24"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rES-PA-cpC">
+                                        <rect key="frame" x="50" y="73" width="500" height="24"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Tippy's Balance: ">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="20" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="+5">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="20" name="HelveticaNeue-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssz-xE-oQ9" userLabel="Menu Button">
@@ -782,9 +810,11 @@
                                 <color key="backgroundColor" red="0.3147277832" green="0.75386148689999999" blue="0.3707537353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="BOk-gu-G55"/>
-                                    <constraint firstAttribute="centerX" secondItem="rES-PA-cpC" secondAttribute="centerX" constant="-0.5" id="Fk3-5A-ZbK"/>
+                                    <constraint firstAttribute="centerX" secondItem="rES-PA-cpC" secondAttribute="centerX" id="Fk3-5A-ZbK"/>
                                     <constraint firstAttribute="bottom" secondItem="rES-PA-cpC" secondAttribute="bottom" constant="13" id="be2-xM-lU5"/>
+                                    <constraint firstItem="rES-PA-cpC" firstAttribute="leading" secondItem="sWX-me-mb1" secondAttribute="leading" constant="50" id="eFA-Ad-FtT"/>
                                     <constraint firstItem="ssz-xE-oQ9" firstAttribute="leading" secondItem="sWX-me-mb1" secondAttribute="leadingMargin" constant="8" id="f8Z-kr-hwQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="rES-PA-cpC" secondAttribute="trailing" constant="50" id="u7p-0g-3fg"/>
                                     <constraint firstItem="ssz-xE-oQ9" firstAttribute="leading" secondItem="sWX-me-mb1" secondAttribute="leading" constant="5" id="zr7-yF-vQ3"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -851,5 +881,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PkS-eQ-BSm"/>
+        <segue reference="ZWg-ez-hbs"/>
     </inferredMetricsTieBreakers>
 </document>

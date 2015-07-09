@@ -52,6 +52,11 @@ class GroupViewController: UIViewController {
           cell.selected = false
           vc.member = members[cell.tag]
       }
+    } else if segue.identifier == "showSelf" {
+      if let vc = segue.destinationViewController as? MemberViewController,
+             userMember = userMember {
+        vc.member = userMember
+      }
     }
   }
 

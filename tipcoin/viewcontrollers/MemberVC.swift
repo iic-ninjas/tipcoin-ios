@@ -19,7 +19,15 @@ class MemberViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    balanceLabel.text = "\(member!.displayName!)'s Balance: \(member!.displayBalance)"
+    let basicPart = "\(member!.firstName!)'s Balance: "
+    let balancePart = member!.displayBalance
+    let fullString = basicPart + balancePart
+    let range = fullString.rangeOfString(balancePart, options: nil, range: nil, locale: nil)
+    let attributedText = NSMutableAttributedString(string: fullString)
+//    UIFont(name: "Helvetica-Neueu-Medium", size: balanceLabel.font.)
+//    attributedText.addAttribute(NSFontAttributeName, value: <#AnyObject#>, range: <#NSRange#>)
+//    balanceLabel.attributedText.attributesAtIndex(balance, effectiveRange: <#NSRangePointer#>)
+    balanceLabel.attributedText = attributedText
   }
   
   var refreshControl: UIRefreshControl!
