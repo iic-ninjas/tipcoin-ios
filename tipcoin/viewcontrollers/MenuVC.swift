@@ -48,10 +48,24 @@ class MenuViewController: UIViewController {
     println("+ MenuVC")
   }
   
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "joinedGroup:", name: "JOINED_GROUP", object: nil)
+  }
+  
+  override func viewDidDisappear(animated: Bool) {
+    super.viewDidDisappear(animated)
+    NSNotificationCenter.defaultCenter().removeObserver(self)
+  }
+  
   deinit{
     println("- MenuVC")
   }
 
+  func joinedGroup(notification: NSNotification) {
+    forceRefresh()
+  }
+  
   private func forceRefresh() {
     self.spinnerView.spin()
     MembershipDatastore.sharedInstance.query() {

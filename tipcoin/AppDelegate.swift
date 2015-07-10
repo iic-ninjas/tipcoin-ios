@@ -8,6 +8,7 @@
 
 import UIKit
 import ParseFacebookUtilsV4
+import SwiftyDrop
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,8 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         InviteManager.sharedInstance.receivedInviteWithGroupId(groupId, inviteToken: inviteToken)
         if let user = PFUser.currentUser() {
           InviteManager.sharedInstance.joinGroup() { group, err in
-            // show alert box
-            // refresh menu page
+            if let group = group as? Group {
+              Drop.down("You just joined group \"\(group.name)\"", blur: .Dark)
+              NSNotificationCenter.defaultCenter().postNotificationName("JOINED_GROUP", object: group)
+            }
           }
           
         }
