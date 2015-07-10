@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyDrop
 
 class MemberViewController: UIViewController {
   
@@ -56,6 +57,8 @@ class MemberViewController: UIViewController {
 
     }
   }
+  
+  var userMember: Member?
 
   var member: Member? {
     didSet {
@@ -84,7 +87,26 @@ class MemberViewController: UIViewController {
       })
     }
   }
+  
   @IBAction func didSpot(sender: AnyObject) {
+    if let from = userMember, to = member {
+      self.spotButton.enabled = false
+      animateToSpottedState()
+      SpotOperation.run(from, to: to) { transaction, err in
+        self.refresh()
+      }
+    }
+  }
+  
+  private func animateToSpottedState() {
+    let duration = 0.5
+    UIView.animateWithDuration(duration) {
+      self.spotButton.setImage(UIImage(named: "checkmark-white")
+        , forState: .Normal)
+      self.spotButton.setTitle("", forState: .Normal)
+      self.spotButton.setNeedsLayout()
+      self.spotButton.layoutIfNeeded()
+    }
   }
 
 }

@@ -49,9 +49,11 @@ class MemberCell: UITableViewCell {
   }
   
   func didTapBalance(gesture: UITapGestureRecognizer){
-    self.resetSpotButton()
-    animateToSpotState()
-    state = .Spot
+    if gesture.state == UIGestureRecognizerState.Ended {
+      self.resetSpotButton()
+      animateToSpotState()
+      state = .Spot
+    }
   }
   
   @IBAction func didClickSpot(sender: AnyObject) {

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SwiftyDrop
+
 
 class SpotOperation {
   class func run(from: Member, to: Member, callback: PFIdResultBlock){
@@ -19,6 +21,14 @@ class SpotOperation {
         from.balance += 1
         to.balance -= 1
       }
+      if let transaction = transaction as? Transaction,
+        firstName = to.firstName {
+          Drop.down("You spotted \"\(firstName)\"", blur: .Dark)
+      } else {
+        let message = err?.localizedDescription ?? "Error while spotting"
+        Drop.down(message, state: .Error)
+      }
+
       callback(transaction, err)
     }
   }

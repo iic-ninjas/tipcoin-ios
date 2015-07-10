@@ -53,6 +53,7 @@ class GroupViewController: UIViewController {
         vc = segue.destinationViewController as? MemberViewController {
           cell.selected = false
           vc.member = members[cell.tag]
+          vc.userMember = userMember
       }
     } else if segue.identifier == "showSelf" {
       if let vc = segue.destinationViewController as? MemberViewController,
@@ -131,10 +132,6 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate, Membe
   
   func spot(member: Member) {
     SpotOperation.run(self.userMember!, to: member) { transaction, err in
-      if let transaction = transaction as? Transaction,
-          firstName = member.firstName {
-            Drop.down("You spotted \"\(firstName)\"", blur: .Dark)
-      }
       self.refresh()
     }
   }

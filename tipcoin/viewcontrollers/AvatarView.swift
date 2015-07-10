@@ -20,10 +20,13 @@ extension UIImageView {
   
   func setMember(member: Member?, largeVariant: Bool = false){
     let modifier = largeVariant ? avatarLargeModifier : ""
+    self.sd_cancelCurrentImageLoad()
     if let member = member,
            avatarUrl = member.avatarUrl,
            url = NSURL(string: avatarUrl + modifier) {
         self.sd_setImageWithURL(url, placeholderImage: defaultAvatarImage)
+    } else {
+      self.image = defaultAvatarImage
     }
   }
   
