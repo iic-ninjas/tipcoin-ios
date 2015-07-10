@@ -25,7 +25,7 @@ class NewGroupViewController: UIViewController {
           println(err)
         } else {
           if let group = group as? Group {
-            Drop.down("Successfully created new group \"\(group.name)\"", state: .Success)
+            Drop.down("Successfully created new group \"\(group.name)\"", blur: .Dark)
           }
 
           self?.performSegueWithIdentifier("backToMenu", sender: group)

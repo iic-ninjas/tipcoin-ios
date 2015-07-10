@@ -16,6 +16,12 @@ class Transaction : PFObject, PFSubclassing {
     return formatter
   }()
   
+  private static let timeFormatter: NSDateFormatter = {
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "HH:mm"
+    return formatter
+    }()
+  
   override class func initialize() {
     var onceToken : dispatch_once_t = 0;
     dispatch_once(&onceToken) {
@@ -33,6 +39,14 @@ class Transaction : PFObject, PFSubclassing {
   lazy var displayDate: String = {
     if let date = self.createdAt {
       return Transaction.dateFormatter.stringFromDate(date)
+    } else {
+      return ""
+    }
+  }()
+  
+  lazy var displayTime: String = {
+    if let date = self.createdAt {
+      return Transaction.timeFormatter.stringFromDate(date)
     } else {
       return ""
     }

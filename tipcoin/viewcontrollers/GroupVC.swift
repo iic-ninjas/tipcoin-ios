@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SwiftyDrop
+
 
 class GroupViewController: UIViewController {
   
@@ -129,6 +131,10 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate, Membe
   
   func spot(member: Member) {
     SpotOperation.run(self.userMember!, to: member) { transaction, err in
+      if let transaction = transaction as? Transaction,
+          firstName = member.firstName {
+            Drop.down("You spotted \"\(firstName)\"", blur: .Dark)
+      }
       self.refresh()
     }
   }

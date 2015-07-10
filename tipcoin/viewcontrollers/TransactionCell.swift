@@ -10,6 +10,18 @@ import Foundation
 
 class TransactionCell: UITableViewCell {
   
+  enum State {
+    case Date, Time
+    func flip() -> State {
+      switch self {
+        case Date: return .Time
+        case Time: return .Date
+      }
+    }
+  }
+  
+  var state: State = .Date
+  
   enum TransactionDirection {
     case From, To
     
@@ -21,14 +33,21 @@ class TransactionCell: UITableViewCell {
     }
   }
   
-  @IBOutlet weak var dateLabel: UILabel!
+  @IBOutlet weak var dateLabel: UILabel! {
+    didSet {
+      let gesture = UITapGestureRecognizer(target: self, action: "didTapDate:")
+      dateLabel?.addGestureRecognizer(gesture)
+    }
+  }
+  
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var indicatorImage: UIImageView!
   
   var transaction: Transaction? {
     didSet {
       if let transaction = transaction {
-        dateLabel.text = transaction.displayDate
+        self.state = .Date
+        updateDateTimeLabel()
         nameLabel.text = name
         indicatorImage.image = direction.image
       }
@@ -55,4 +74,18 @@ class TransactionCell: UITableViewCell {
       case .To: return transaction?.from.displayName
     }
   }
+  
+  func didTapDate(gesture: UITapGestureRecognizer){
+    if gesture.state == UIGestureRecognizerState.Ended {
+      self.state = self.state.flip()
+      updateDateTimeLabel()
+    }
+  }
+  
+  func updateDateTimeLabel() {
+    if let transaction = transaction {
+      dateLabel.text = state == .Date ? transaction.displayDate : transaction.displayTime
+    }
+  }
+
 }

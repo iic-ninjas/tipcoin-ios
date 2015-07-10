@@ -748,26 +748,33 @@
                                                     <color key="textColor" red="0.25488343834877014" green="0.25491636991500854" blue="0.25486448407173157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/06" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzd-Jq-isy">
-                                                    <rect key="frame" x="553" y="16" width="39" height="18"/>
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/06" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzd-Jq-isy">
+                                                    <rect key="frame" x="537" y="8" width="55" height="34"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="TZK-QO-74f"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" red="0.45487147569656372" green="0.45492565631866455" blue="0.45484030246734619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Mzd-Jq-isy" firstAttribute="top" secondItem="Cy9-Dv-r7x" secondAttribute="topMargin" id="2sP-Pm-Chr"/>
                                                 <constraint firstItem="k6p-2p-7zd" firstAttribute="top" secondItem="Cy9-Dv-r7x" secondAttribute="topMargin" constant="-5" id="9qS-Ip-3Pu"/>
                                                 <constraint firstItem="4bs-BV-mly" firstAttribute="leading" secondItem="k6p-2p-7zd" secondAttribute="trailing" constant="16" id="AyM-6g-bzz"/>
-                                                <constraint firstItem="Mzd-Jq-isy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4bs-BV-mly" secondAttribute="trailing" constant="100" id="HIT-KC-7hY"/>
+                                                <constraint firstItem="Mzd-Jq-isy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4bs-BV-mly" secondAttribute="trailing" constant="10" id="HIT-KC-7hY"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="k6p-2p-7zd" secondAttribute="bottom" constant="-5" id="LCH-Hm-mBb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Mzd-Jq-isy" secondAttribute="trailing" id="Zq1-zl-N2b"/>
                                                 <constraint firstAttribute="centerY" secondItem="k6p-2p-7zd" secondAttribute="centerY" id="aOL-hl-g0X"/>
                                                 <constraint firstItem="k6p-2p-7zd" firstAttribute="leading" secondItem="Cy9-Dv-r7x" secondAttribute="leadingMargin" id="kbf-kN-4jf"/>
                                                 <constraint firstAttribute="centerY" secondItem="4bs-BV-mly" secondAttribute="centerY" id="lcU-op-GVW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Mzd-Jq-isy" secondAttribute="bottom" id="uPS-Bw-WiI"/>
                                                 <constraint firstAttribute="centerY" secondItem="Mzd-Jq-isy" secondAttribute="centerY" id="uzO-Hk-qpu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="dateLabel" destination="Mzd-Jq-isy" id="ZuZ-4w-f0Q"/>
                                             <outlet property="indicatorImage" destination="k6p-2p-7zd" id="IfI-F9-UMe"/>
