@@ -30,10 +30,7 @@ class MemberCell: UITableViewCell {
   var member: Member? {
     didSet {
       if let member = member {
-        if let avatarUrl = member.avatarUrl,
-          url = NSURL(string: avatarUrl) {
-            avatarView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "default-avatar"))
-        }
+        avatarView.setMember(member)
         nameLabel.text = member.displayName
         balanceLabel.text = member.displayBalance
         resetState()

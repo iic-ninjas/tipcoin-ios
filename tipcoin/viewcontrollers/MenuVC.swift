@@ -37,12 +37,7 @@ class MenuViewController: UIViewController {
     super.viewDidLoad()
     if let user = PFUser.currentUser() {
       self.forceRefresh()
-
-      if let urlString = user["avatarUrl"] as? String,
-         let avatarURL = NSURL(string: urlString + "?type=large") {
-          avatarView.sd_setImageWithURL(avatarURL, placeholderImage: UIImage(named: "default-avatar"))
-      }
-
+      avatarView.setUser(user, largeVariant: true)
     }
   }
 

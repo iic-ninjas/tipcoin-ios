@@ -10,6 +10,14 @@ import Foundation
 
 class MemberViewController: UIViewController {
   
+  @IBOutlet weak var spotButton: UIButton!
+  
+  @IBOutlet weak var avatarView: UIImageView! {
+    didSet {
+      avatarView.setMember(member)
+    }
+  }
+  
   @IBOutlet private weak var balanceLabel: UILabel!
   @IBOutlet weak var tippyView: UIImageView! {
     didSet {
@@ -19,7 +27,7 @@ class MemberViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    let basicPart = "\(member!.firstName!)'s Balance: "
+    let basicPart = isMe ? "Your Personal Balance: " : "\(member!.firstName!)'s Balance: "
     let balancePart = member!.displayBalance
     let fullString = basicPart + balancePart
     let range = fullString.rangeOfString(balancePart, options: nil, range: nil, locale: nil)
@@ -28,7 +36,13 @@ class MemberViewController: UIViewController {
 //    attributedText.addAttribute(NSFontAttributeName, value: <#AnyObject#>, range: <#NSRange#>)
 //    balanceLabel.attributedText.attributesAtIndex(balance, effectiveRange: <#NSRangePointer#>)
     balanceLabel.attributedText = attributedText
+    
+    if isMe {
+      self.spotButton.removeFromSuperview()
+    }
   }
+  
+  var isMe: Bool { return PFUser.currentUser() != nil && member?.user == PFUser.currentUser() }
   
   var refreshControl: UIRefreshControl!
 
@@ -63,6 +77,8 @@ class MemberViewController: UIViewController {
         }
       })
     }
+  }
+  @IBAction func didSpot(sender: AnyObject) {
   }
 
 }

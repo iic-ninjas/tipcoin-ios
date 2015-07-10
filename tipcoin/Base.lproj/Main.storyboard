@@ -707,7 +707,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jWF-I2-IAJ">
-                                <rect key="frame" x="0.0" y="110" width="600" height="490"/>
+                                <rect key="frame" x="0.0" y="165" width="600" height="435"/>
                                 <color key="backgroundColor" red="0.98425167798995972" green="0.98436206579208374" blue="0.98418813943862915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TRANSACTION_CELL" id="wgA-QY-4Dl" customClass="TransactionCell" customModule="tipcoin" customModuleProvider="target">
@@ -771,10 +771,22 @@
                                 </variation>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWX-me-mb1" userLabel="Top Bar" customClass="TiledBackgroundView" customModule="tipcoin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="165"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="dYd-mq-FRG">
+                                        <rect key="frame" x="275" y="32" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.99993699790000001" green="1" blue="0.99987250569999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="UD8-cd-0OP"/>
+                                            <constraint firstAttribute="height" constant="50" id="ZMe-NK-SOO"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rES-PA-cpC">
-                                        <rect key="frame" x="50" y="73" width="500" height="24"/>
+                                        <rect key="frame" x="50" y="88" width="500" height="24"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Tippy's Balance: ">
                                                 <attributes>
@@ -806,14 +818,48 @@
                                             <segue destination="WI9-za-hU3" kind="unwind" unwindAction="backToGroup:" id="zQt-9x-DQf"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2z-Jl-Y8Z">
+                                        <rect key="frame" x="254" y="120" width="92" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="YbD-Yr-Xzk"/>
+                                            <constraint firstAttribute="width" constant="95" id="xlg-QR-R8U"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                        <color key="tintColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" title="Spot">
+                                            <color key="titleColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                <color key="value" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="xlg-QR-R8U"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="didSpot:" destination="amn-EB-qYc" eventType="touchUpInside" id="4VL-aW-UDe"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.3147277832" green="0.75386148689999999" blue="0.3707537353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="BOk-gu-G55"/>
+                                    <constraint firstAttribute="height" constant="150" id="BOk-gu-G55"/>
                                     <constraint firstAttribute="centerX" secondItem="rES-PA-cpC" secondAttribute="centerX" id="Fk3-5A-ZbK"/>
+                                    <constraint firstAttribute="bottom" secondItem="rES-PA-cpC" secondAttribute="bottom" priority="750" constant="12" id="Yb0-jg-DeJ"/>
                                     <constraint firstAttribute="bottom" secondItem="rES-PA-cpC" secondAttribute="bottom" constant="13" id="be2-xM-lU5"/>
+                                    <constraint firstAttribute="centerX" secondItem="dYd-mq-FRG" secondAttribute="centerX" id="cRe-7G-3nH"/>
+                                    <constraint firstItem="u2z-Jl-Y8Z" firstAttribute="top" secondItem="rES-PA-cpC" secondAttribute="bottom" constant="8" id="ds6-b9-gxQ"/>
                                     <constraint firstItem="rES-PA-cpC" firstAttribute="leading" secondItem="sWX-me-mb1" secondAttribute="leading" constant="50" id="eFA-Ad-FtT"/>
                                     <constraint firstItem="ssz-xE-oQ9" firstAttribute="leading" secondItem="sWX-me-mb1" secondAttribute="leadingMargin" constant="8" id="f8Z-kr-hwQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="u2z-Jl-Y8Z" secondAttribute="bottom" constant="10" id="iQZ-tu-9Wg"/>
+                                    <constraint firstAttribute="centerX" secondItem="u2z-Jl-Y8Z" secondAttribute="centerX" id="lZK-EN-Hld"/>
+                                    <constraint firstItem="rES-PA-cpC" firstAttribute="top" secondItem="dYd-mq-FRG" secondAttribute="bottom" constant="6" id="r68-65-r2b"/>
                                     <constraint firstAttribute="trailing" secondItem="rES-PA-cpC" secondAttribute="trailing" constant="50" id="u7p-0g-3fg"/>
                                     <constraint firstItem="ssz-xE-oQ9" firstAttribute="leading" secondItem="sWX-me-mb1" secondAttribute="leading" constant="5" id="zr7-yF-vQ3"/>
                                 </constraints>
@@ -822,7 +868,9 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="BOk-gu-G55"/>
                                         <exclude reference="f8Z-kr-hwQ"/>
+                                        <exclude reference="be2-xM-lU5"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -841,6 +889,7 @@
                             <constraint firstAttribute="trailing" secondItem="jWF-I2-IAJ" secondAttribute="trailing" id="pZT-7P-U8y"/>
                             <constraint firstItem="sWX-me-mb1" firstAttribute="leading" secondItem="xR7-Xi-Azt" secondAttribute="leading" id="pel-97-ntG"/>
                             <constraint firstItem="ssz-xE-oQ9" firstAttribute="top" secondItem="tI9-fh-3Ew" secondAttribute="bottom" id="r83-Ea-JdD"/>
+                            <constraint firstItem="dYd-mq-FRG" firstAttribute="top" secondItem="tI9-fh-3Ew" secondAttribute="bottom" constant="12" id="sK1-lC-Gq2"/>
                             <constraint firstItem="jWF-I2-IAJ" firstAttribute="leading" secondItem="xR7-Xi-Azt" secondAttribute="leadingMargin" id="sYm-69-KVF"/>
                             <constraint firstAttribute="trailing" secondItem="q6U-g2-FiH" secondAttribute="trailing" id="xMz-ZN-z4I"/>
                         </constraints>
@@ -853,7 +902,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="avatarView" destination="dYd-mq-FRG" id="ecA-Sw-zRK"/>
                         <outlet property="balanceLabel" destination="rES-PA-cpC" id="3WC-Aw-Iu6"/>
+                        <outlet property="spotButton" destination="u2z-Jl-Y8Z" id="tDb-xk-Hp9"/>
                         <outlet property="tableView" destination="jWF-I2-IAJ" id="iG9-DR-t8v"/>
                         <outlet property="tippyView" destination="q6U-g2-FiH" id="e7M-vJ-NgT"/>
                     </connections>
