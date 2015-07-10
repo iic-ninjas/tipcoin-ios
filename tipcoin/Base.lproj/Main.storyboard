@@ -45,7 +45,7 @@
                                             <constraint firstAttribute="height" constant="124" id="cgJ-Yx-uWG"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tip-coin-large" translatesAutoresizingMaskIntoConstraints="NO" id="DG0-k0-oQh">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tippy-splash" translatesAutoresizingMaskIntoConstraints="NO" id="DG0-k0-oQh">
                                         <rect key="frame" x="99" y="20" width="122" height="123"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="123" id="EcD-GS-iM9"/>
@@ -185,7 +185,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UyQ-aW-6Ai" id="QvC-yv-388">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-group-state" translatesAutoresizingMaskIntoConstraints="NO" id="MW9-EN-bi3">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="MW9-EN-bi3">
                                                     <rect key="frame" x="171" y="3" width="258" height="77"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="600" id="2vW-fa-MGW"/>
@@ -555,8 +555,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gmS-io-jJH" id="H5I-ob-DAP">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="Ups-b8-hev">
-                                                    <rect key="frame" x="177" y="68" width="247" height="219"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="Ups-b8-hev">
+                                                    <rect key="frame" x="176" y="68" width="248" height="219"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="219" id="yMm-ff-ajV"/>
                                                     </constraints>
@@ -962,22 +962,22 @@
     </scenes>
     <resources>
         <image name="Facebooklogo" width="33" height="32"/>
-        <image name="Splash-text" width="265" height="124"/>
+        <image name="Splash-text" width="274" height="125"/>
         <image name="Tile" width="50" height="50"/>
         <image name="default-avatar" width="75" height="75"/>
-        <image name="empty-group-state" width="258" height="77"/>
-        <image name="empty-state" width="247" height="222"/>
+        <image name="group-empty-state" width="248" height="222"/>
         <image name="icon-back" width="50" height="50"/>
         <image name="icon-burger" width="50" height="50"/>
         <image name="icon-close" width="50" height="50"/>
         <image name="icon-invite" width="50" height="50"/>
         <image name="icon-logout" width="50" height="50"/>
+        <image name="menu-empty-state" width="258" height="77"/>
         <image name="positive" width="20" height="19"/>
-        <image name="tip-coin-large" width="122" height="123"/>
         <image name="tippy-small" width="37" height="38"/>
+        <image name="tippy-splash" width="122" height="123"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PkS-eQ-BSm"/>
         <segue reference="ZWg-ez-hbs"/>
+        <segue reference="PkS-eQ-BSm"/>
     </inferredMetricsTieBreakers>
 </document>

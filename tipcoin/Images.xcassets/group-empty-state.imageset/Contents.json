@@ -3,15 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Tip Coin + Save a friend, Spot  + Line.png"
+      "filename" : "group-empty-state.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "group-empty-state@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "group-empty-state@3x.png"
     }
   ],
   "info" : {
