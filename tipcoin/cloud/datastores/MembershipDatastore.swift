@@ -27,4 +27,8 @@ class MembershipDatastore: NSObject {
     }
   }
   
+  func deleteGroup(index: Int) {
+    memberships.removeAtIndex(index)
+  }
+  
 }

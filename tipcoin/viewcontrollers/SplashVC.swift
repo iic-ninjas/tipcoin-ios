@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ParseFacebookUtilsV4
 
 class SplashViewController: UIViewController {
   

@@ -75,8 +75,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
       return tableView.dequeueReusableCellWithIdentifier("EMPTY_CELL", forIndexPath: indexPath) as! UITableViewCell
     } else {
       let cell = tableView.dequeueReusableCellWithIdentifier("GROUP_CELL", forIndexPath: indexPath) as! GroupMembershipCell
-      let member = MembershipDatastore.sharedInstance.memberships[indexPath.row % groupCount()]
-      cell.member = member
+      cell.member = memberForIndexPath(indexPath)
       return cell
     }
   }
@@ -93,9 +92,33 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
   func groupCount() -> Int {
     return MembershipDatastore.sharedInstance.memberships.count
   }
+  
+  func memberForIndexPath(indexPath: NSIndexPath) -> Member {
+    return MembershipDatastore.sharedInstance.memberships[indexPath.row]
+  }
 
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 2
+  }
+  
+  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return false
+//    return indexPath.section == 0 && groupCount() > 0
+  }
+  
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if editingStyle == UITableViewCellEditingStyle.Delete {
+      let alert = UIAlertController(title: "Delete Group", message: "Are you sure you want to delete this group? This action can not be undone", preferredStyle: UIAlertControllerStyle.Alert)
+      alert.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: { _ in
+        MembershipDatastore.sharedInstance.deleteGroup(indexPath.row)
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+      }))
+      alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { _ in
+        tableView.setEditing(false, animated: true)
+      }))
+      self.presentViewController(alert, animated: true, completion: nil)
+
+    }
   }
 
 }

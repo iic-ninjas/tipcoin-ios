@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SwiftyDrop
+
 
 class NewGroupViewController: UIViewController {
   
@@ -22,7 +24,11 @@ class NewGroupViewController: UIViewController {
         if err != nil {
           println(err)
         } else {
-          self?.performSegueWithIdentifier("backToMenu", sender: nil)
+          if let group = group as? Group {
+            Drop.down("Successfully created new group \"\(group.name)\"", state: .Success)
+          }
+
+          self?.performSegueWithIdentifier("backToMenu", sender: group)
         }
       }
     }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC4421BB50D7653DFC3B2610 /* libPods-tipcoin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9A22A5C5F65FA22836144F /* libPods-tipcoin.a */; };
+		A59E55080D73F2AA7118279C /* Pods_tipcoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284C27847D87EBB48C5D9DB9 /* Pods_tipcoin.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B019929B1B444E6F005A019D /* SpotOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B019929A1B444E6F005A019D /* SpotOperation.swift */; };
 		B04EFE911B4D55D6000B6DC1 /* MemberInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04EFE901B4D55D6000B6DC1 /* MemberInfoOperation.swift */; };
 		B04EFE931B4D5690000B6DC1 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04EFE921B4D5690000B6DC1 /* TransactionCell.swift */; };
@@ -53,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		284C27847D87EBB48C5D9DB9 /* Pods_tipcoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tipcoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		815BAB89D6823924610F96E9 /* Pods-tipcoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipcoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-tipcoin/Pods-tipcoin.release.xcconfig"; sourceTree = "<group>"; };
 		B019929A1B444E6F005A019D /* SpotOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotOperation.swift; sourceTree = "<group>"; };
 		B04EFE901B4D55D6000B6DC1 /* MemberInfoOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoOperation.swift; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		E89F0F591B287794002C5488 /* tipcoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipcoinTests.swift; sourceTree = "<group>"; };
 		E8F0F8921B287AED0028303E /* tipcoin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tipcoin-Bridging-Header.h"; sourceTree = "<group>"; };
 		E8F0F8971B287FA90028303E /* MyMembershipsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMembershipsOperation.swift; sourceTree = "<group>"; };
-		EF9A22A5C5F65FA22836144F /* libPods-tipcoin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tipcoin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F165C863A15EFB1F8A76BD1F /* Pods-tipcoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipcoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tipcoin/Pods-tipcoin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC4421BB50D7653DFC3B2610 /* libPods-tipcoin.a in Frameworks */,
+				A59E55080D73F2AA7118279C /* Pods_tipcoin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 		A32B5AB00ED7F92AA6208E24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EF9A22A5C5F65FA22836144F /* libPods-tipcoin.a */,
+				284C27847D87EBB48C5D9DB9 /* Pods_tipcoin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -277,6 +277,7 @@
 				E89F0F3B1B287794002C5488 /* Frameworks */,
 				E89F0F3C1B287794002C5488 /* Resources */,
 				AD933EE4CDAA92B483F80E9B /* Copy Pods Resources */,
+				12FA739931DC13E4B4FB314A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -363,6 +364,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		12FA739931DC13E4B4FB314A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tipcoin/Pods-tipcoin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AD933EE4CDAA92B483F80E9B /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

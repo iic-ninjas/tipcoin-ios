@@ -26,11 +26,13 @@ PODS:
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
+  - SwiftyDrop (1.0.4)
 
 DEPENDENCIES:
   - Parse
   - ParseFacebookUtilsV4
   - SDWebImage (~> 3.7)
+  - SwiftyDrop (~> 1.0)
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
@@ -39,5 +41,6 @@ SPEC CHECKSUMS:
   Parse: 6ca512c6e860b66739c95151b2f76ac4712b7842
   ParseFacebookUtilsV4: 481ea7b00f8f62440c314ac7f80eada228bf7488
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  SwiftyDrop: fd8aa3295382c01867a9f14bb533698e89de69cb
 
 COCOAPODS: 0.36.0
