@@ -43,8 +43,17 @@ class GroupViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    groupNameLabel.text = group?.name
-    balanceLabel.text = "Your Personal Balance: \(userMember!.displayBalance)"
+    self.showGroupInfo()
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    if group == nil {
+      performSegueWithIdentifier("showMenuInstant", sender: nil)
+    }
+  }
+  
+  deinit{
+    println("- GroupVC")
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -59,6 +68,11 @@ class GroupViewController: UIViewController {
       if let vc = segue.destinationViewController as? MemberViewController,
              userMember = userMember {
         vc.member = userMember
+      }
+    } else if segue.identifier == "showMenu" {
+      if let vc = segue.destinationViewController as? MenuViewController,
+        userMember = userMember {
+          vc.currentGroupMember = userMember
       }
     }
   }
@@ -77,6 +91,13 @@ class GroupViewController: UIViewController {
     }
   }
   
+  func showGroupInfo() {
+    if let group = group {
+      groupNameLabel?.text = group.name
+      balanceLabel?.text = "Your Personal Balance: \(userMember!.displayBalance)"
+    }
+  }
+  
   var members: [Member] = [] {
     didSet {
       tableView.reloadData()
@@ -88,6 +109,9 @@ class GroupViewController: UIViewController {
   var fetchedGroupInfo = false
   
   func refresh() {
+    self.userMember?.fetchInBackgroundWithBlock() { obj, err in
+      self.showGroupInfo()
+    }
     if let group = group {
       tippy?.startSpinning()
       GetGroupInfo.get(group.objectId!) { group in

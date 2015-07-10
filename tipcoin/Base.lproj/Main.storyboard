@@ -81,12 +81,13 @@
                     <connections>
                         <outlet property="loginButton" destination="TCa-ce-tzX" id="jt7-c6-2v0"/>
                         <outlet property="tiledBgView" destination="RrK-GV-rfX" id="3bq-Y9-yqq"/>
-                        <segue destination="EQm-wQ-tZj" kind="show" identifier="showMenu" id="lRW-g4-QGE"/>
+                        <segue destination="XmI-1O-OR2" kind="presentation" identifier="showGroup" modalTransitionStyle="crossDissolve" id="zM2-fw-vKj"/>
+                        <segue destination="EQm-wQ-tZj" kind="presentation" identifier="showMenu" modalTransitionStyle="crossDissolve" id="YXh-cY-QKW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXi-Ik-67w" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="345" y="1130"/>
+            <point key="canvasLocation" x="206" y="2226"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="28R-WD-dHp">
@@ -113,6 +114,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logOut:" destination="EQm-wQ-tZj" eventType="touchUpInside" id="yZ7-TX-OXO"/>
+                                    <segue destination="qpt-Rz-CMv" kind="unwind" identifier="backToSplash" unwindAction="goBackToSplash:" id="ptv-zU-vg2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Il-0O-eFF" userLabel="Close-button">
@@ -122,7 +124,7 @@
                                 </state>
                                 <connections>
                                     <action selector="closeMenu:" destination="EQm-wQ-tZj" eventType="touchUpInside" id="oZz-hh-9Y2"/>
-                                    <segue destination="qpt-Rz-CMv" kind="unwind" unwindAction="backToGroup:" id="ytU-wn-JFv"/>
+                                    <segue destination="qpt-Rz-CMv" kind="unwind" identifier="back" unwindAction="backToGroup:" id="xb7-cS-his"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="W6y-Tc-pzg">
@@ -177,7 +179,6 @@
                                         <connections>
                                             <outlet property="balance" destination="l69-Qz-VdC" id="lTQ-Wo-8Ib"/>
                                             <outlet property="groupName" destination="iTa-PB-wUC" id="sA6-dZ-6Nv"/>
-                                            <segue destination="XmI-1O-OR2" kind="show" identifier="showGroup" id="HeG-aj-LlU"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EMPTY_CELL" rowHeight="84" id="UyQ-aW-6Ai">
@@ -238,7 +239,7 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
-                                                        <segue destination="3jg-YL-KUX" kind="presentation" identifier="new_group" id="qz7-hT-ccc"/>
+                                                        <segue destination="3jg-YL-KUX" kind="showDetail" identifier="newGroup" id="AoT-ik-H6i"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -299,15 +300,16 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="avatarView" destination="W6y-Tc-pzg" id="Ljp-cw-p3A"/>
+                        <outlet property="closeButton" destination="5Il-0O-eFF" id="fXb-A7-kIY"/>
                         <outlet property="spinnerView" destination="jIB-za-pzi" id="Vcl-Sr-Vao"/>
                         <outlet property="tableView" destination="BmY-8W-oMs" id="0Ou-Pz-S13"/>
-                        <segue destination="qpt-Rz-CMv" kind="unwind" identifier="back" unwindAction="goToSideMenu:" id="oWw-qQ-q7T"/>
+                        <segue destination="XmI-1O-OR2" kind="presentation" identifier="chooseGroup" modalTransitionStyle="crossDissolve" id="4gg-vf-u3W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIs-KB-svP" sceneMemberID="firstResponder"/>
                 <exit id="qpt-Rz-CMv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="1130"/>
+            <point key="canvasLocation" x="1715" y="1546"/>
         </scene>
         <!--New Group View Controller-->
         <scene sceneID="wi2-Ic-ncW">
@@ -337,8 +339,8 @@
                                             <segue destination="I8r-hf-AyI" kind="unwind" identifier="backToMenu" unwindAction="backToMenu:" id="NQa-Xe-TyZ"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="New Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gG7-gS-MfL">
-                                        <rect key="frame" x="241" y="34" width="118" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gG7-gS-MfL">
+                                        <rect key="frame" x="248" y="33" width="105" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -439,7 +441,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEd-bK-XWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="I8r-hf-AyI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="1130"/>
+            <point key="canvasLocation" x="2423" y="1546"/>
         </scene>
         <!--Group View Controller-->
         <scene sceneID="beX-F4-FBm">
@@ -547,7 +549,7 @@
                                             <outlet property="balanceLabel" destination="Iel-ju-Lms" id="zYJ-gT-Acn"/>
                                             <outlet property="nameLabel" destination="pU0-h8-oxX" id="FrP-79-ndJ"/>
                                             <outlet property="spotButton" destination="caU-MS-CmJ" id="1Qp-OJ-my1"/>
-                                            <segue destination="amn-EB-qYc" kind="show" identifier="showMember" id="PB2-8r-bNT"/>
+                                            <segue destination="amn-EB-qYc" kind="showDetail" identifier="showMember" id="PB2-8r-bNT"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EMPTY_CELL" rowHeight="355" id="gmS-io-jJH">
@@ -614,7 +616,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="EQm-wQ-tZj" kind="presentation" identifier="showMenu" id="PkS-eQ-BSm"/>
+                                            <segue destination="EQm-wQ-tZj" kind="presentation" identifier="showMenu" modalTransitionStyle="coverVertical" id="PkS-eQ-BSm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oj-0q-jqP" userLabel="Invite Button">
@@ -630,8 +632,8 @@
                                             <action selector="shareInvite:" destination="XmI-1O-OR2" eventType="touchUpInside" id="bCp-jw-0mf"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Group Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrO-7P-gI5">
-                                        <rect key="frame" x="241" y="34" width="118" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrO-7P-gI5">
+                                        <rect key="frame" x="242" y="33" width="118" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -708,7 +710,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfJ-4h-8kQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="9UO-xg-KNV">
                     <connections>
-                        <segue destination="amn-EB-qYc" kind="show" identifier="showSelf" id="ZWg-ez-hbs"/>
+                        <segue destination="amn-EB-qYc" kind="showDetail" identifier="showSelf" id="ZWg-ez-hbs"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -964,7 +966,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HD0-jo-Fr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WI9-za-hU3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1827" y="2242"/>
+            <point key="canvasLocation" x="1715" y="2226"/>
         </scene>
     </scenes>
     <resources>
@@ -984,7 +986,8 @@
         <image name="tippy-splash" width="122" height="123"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZWg-ez-hbs"/>
+        <segue reference="PB2-8r-bNT"/>
+        <segue reference="4gg-vf-u3W"/>
         <segue reference="PkS-eQ-BSm"/>
     </inferredMetricsTieBreakers>
 </document>

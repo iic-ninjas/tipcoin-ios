@@ -10,6 +10,11 @@ import Foundation
 
 class MenuViewController: UIViewController {
 
+  @IBOutlet weak var closeButton: UIButton! {
+    didSet {
+      closeButton.hidden = currentGroupMember == nil
+    }
+  }
   @IBOutlet weak var spinnerView: Spinner!
   @IBOutlet weak var tableView: UITableView! {
     didSet{
@@ -18,10 +23,11 @@ class MenuViewController: UIViewController {
     }
   }
   @IBOutlet weak var avatarView: UIImageView!
-
+  
+  var currentGroupMember: Member?
+  
   @IBAction func logOut(sender: AnyObject) {
     PFUser.logOut()
-    performSegueWithIdentifier("back", sender: nil)
   }
 
   @IBAction func closeMenu(sender: AnyObject) {
@@ -39,6 +45,11 @@ class MenuViewController: UIViewController {
       self.forceRefresh()
       avatarView.setUser(user, largeVariant: true)
     }
+    println("+ MenuVC")
+  }
+  
+  deinit{
+    println("- MenuVC")
   }
 
   private func forceRefresh() {
@@ -54,16 +65,16 @@ class MenuViewController: UIViewController {
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "showGroup" {
-      if let cell = sender as? GroupMembershipCell,
+    if segue.identifier == "chooseGroup" || segue.identifier == "back" {
+      if let member = sender as? Member,
             vc = segue.destinationViewController as? GroupViewController {
-        if let group = cell.member?.group {
-          StateManager.sharedInstance.setCurrentGroup(group)
-        }
-        vc.userMember = cell.member
+        StateManager.sharedInstance.setCurrentGroup(member.group)
+        currentGroupMember = member
+        vc.userMember = member
       }
     }
   }
+  
 }
 
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
@@ -87,6 +98,17 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     } else {
       return max(groupCount(), 1)
     }
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    if indexPath.section == 1 || groupCount() == 0 { return }
+    
+    if currentGroupMember != nil {
+      performSegueWithIdentifier("back", sender: memberForIndexPath(indexPath))
+    } else {
+      performSegueWithIdentifier("chooseGroup", sender: memberForIndexPath(indexPath))
+    }
+    
   }
 
   func groupCount() -> Int {

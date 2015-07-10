@@ -17,7 +17,13 @@ class SplashViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     startLoading()
+    println("+ SplashVC")
   }
+  
+  deinit{
+    println("- SplashVC")
+  }
+
   
   func startLoading(){
     tiledBgView.animate()
@@ -50,7 +56,6 @@ class SplashViewController: UIViewController {
   func getUserData() {
     let request = FBSDKGraphRequest(graphPath: "me", parameters: nil)
     request.startWithCompletionHandler() { connection, result, error in
-      println(result)
       let firstName = result["first_name"] as! String
       let lastName = result["last_name"] as! String
       let displayName = result["name"] as! String
@@ -73,25 +78,32 @@ class SplashViewController: UIViewController {
           if let group = group as? Group {
           let vc = UIAlertController(title: "Joined Group", message: "Successfully join the group \"\(group.name)\"", preferredStyle: UIAlertControllerStyle.Alert)
             vc.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { _ in
-              self.navigateToMenu()
+              self.navigateToNext()
             }))
             self.presentViewController(vc, animated: true, completion: nil)
           } else {
-            self.navigateToMenu()
+            self.navigateToNext()
           }
         }
       } else {
-        self.navigateToMenu()
+        self.navigateToNext()
       }
 
     }
   }
   
-  private func navigateToMenu() {
+  private func navigateToNext() {
     self.performSegueWithIdentifier("showMenu", sender: nil)
   }
   
-  @IBAction func goToSideMenu(segue: UIStoryboardSegue) {
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "showGroup" {
+//      if let vc = segue.destinationViewController as GroupViewController {
+//      }
+    }
+  }
+  
+  @IBAction func goBackToSplash(segue: UIStoryboardSegue) {
     startLoading()
   }
 

@@ -28,20 +28,14 @@ class MemberViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    let basicPart = isMe ? "Your Personal Balance: " : "\(member!.firstName!)'s Balance: "
-    let balancePart = member!.displayBalance
-    let fullString = basicPart + balancePart
-    let range = fullString.rangeOfString(balancePart, options: nil, range: nil, locale: nil)
-    let attributedText = NSMutableAttributedString(string: fullString)
-//    UIFont(name: "Helvetica-Neueu-Medium", size: balanceLabel.font.)
-//    attributedText.addAttribute(NSFontAttributeName, value: <#AnyObject#>, range: <#NSRange#>)
-//    balanceLabel.attributedText.attributesAtIndex(balance, effectiveRange: <#NSRangePointer#>)
-    balanceLabel.attributedText = attributedText
-    
-    if isMe {
-      self.spotButton.removeFromSuperview()
-    }
+    refresh()
+    println("+ MemberVC")
   }
+  
+  deinit{
+    println("- MemberVC")
+  }
+
   
   var isMe: Bool { return PFUser.currentUser() != nil && member?.user == PFUser.currentUser() }
   
@@ -54,17 +48,11 @@ class MemberViewController: UIViewController {
       tableView.addSubview(refreshControl)
       tableView.rowHeight = UITableViewAutomaticDimension
       tableView.estimatedRowHeight = 50
-
     }
   }
   
   var userMember: Member?
-
-  var member: Member? {
-    didSet {
-      refresh()
-    }
-  }
+  var member: Member?
   
   var transactions: [Transaction] = [] {
     didSet {
@@ -77,12 +65,15 @@ class MemberViewController: UIViewController {
   var fetchedTransaction = false
   
   func refresh() {
+    showBalance()
     tippyView?.startSpinning()
     if let member = member {
       MemberInfoOperation.run(member, callback: { (newMember, err) -> Void in
         if let newMember = newMember as? Member {
+          self.member = newMember
           self.fetchedTransaction = true
           self.transactions = newMember.sortedTransactions ?? []
+          self.showBalance()
         }
       })
     }
@@ -109,6 +100,17 @@ class MemberViewController: UIViewController {
     }
   }
 
+  private func showBalance() {
+    let basicPart = isMe ? "Your Personal Balance: " : "\(member!.firstName!)'s Balance: "
+    let balancePart = member!.displayBalance
+    let fullString = basicPart + balancePart
+    balanceLabel?.text = fullString
+    
+    if isMe {
+      self.spotButton?.removeFromSuperview()
+    }
+
+  }
 }
 
 
