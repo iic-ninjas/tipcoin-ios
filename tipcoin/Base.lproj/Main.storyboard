@@ -638,16 +638,21 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron-forward" translatesAutoresizingMaskIntoConstraints="NO" id="E4t-Pa-19N">
+                                        <rect key="frame" x="541" y="98" width="9" height="16"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.3147277832" green="0.75386148689999999" blue="0.3707537353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="SKW-KA-4A4" secondAttribute="bottom" constant="5" id="1Md-3A-7Pe"/>
                                     <constraint firstAttribute="centerX" secondItem="SKW-KA-4A4" secondAttribute="centerX" id="2Rg-Ql-jQU"/>
                                     <constraint firstAttribute="centerX" secondItem="OrO-7P-gI5" secondAttribute="centerX" id="Bm0-mG-Lvs"/>
+                                    <constraint firstItem="SKW-KA-4A4" firstAttribute="centerY" secondItem="E4t-Pa-19N" secondAttribute="centerY" constant="-1" id="Hee-uI-wfE"/>
                                     <constraint firstItem="5oj-0q-jqP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OrO-7P-gI5" secondAttribute="trailing" id="IWP-Ye-b8h"/>
                                     <constraint firstItem="6Hj-Xf-21f" firstAttribute="leading" secondItem="JI6-Xb-kGk" secondAttribute="leading" constant="5" id="N62-vs-y6m"/>
                                     <constraint firstItem="SKW-KA-4A4" firstAttribute="leading" secondItem="JI6-Xb-kGk" secondAttribute="leading" constant="50" id="QiE-IR-1mC"/>
                                     <constraint firstAttribute="trailing" secondItem="SKW-KA-4A4" secondAttribute="trailing" constant="50" id="SED-nU-0fr"/>
+                                    <constraint firstItem="SKW-KA-4A4" firstAttribute="trailing" secondItem="E4t-Pa-19N" secondAttribute="trailing" id="XnG-uZ-PBk"/>
                                     <constraint firstItem="6Hj-Xf-21f" firstAttribute="leading" secondItem="JI6-Xb-kGk" secondAttribute="leadingMargin" constant="8" id="cST-R1-MMs"/>
                                     <constraint firstAttribute="trailing" secondItem="5oj-0q-jqP" secondAttribute="trailing" constant="5" id="gxl-Vc-og9"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="5oj-0q-jqP" secondAttribute="trailing" constant="8" id="jOg-Xx-hk6"/>
@@ -973,6 +978,7 @@
         <image name="Facebooklogo" width="33" height="32"/>
         <image name="Splash-text" width="274" height="125"/>
         <image name="Tile" width="50" height="50"/>
+        <image name="chevron-forward" width="9" height="16"/>
         <image name="default-avatar" width="75" height="75"/>
         <image name="group-empty-state" width="248" height="222"/>
         <image name="icon-back" width="50" height="50"/>

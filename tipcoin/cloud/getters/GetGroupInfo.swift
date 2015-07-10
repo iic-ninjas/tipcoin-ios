@@ -17,12 +17,7 @@ class GetGroupInfo {
       }
       
       if let group = rawResponse as? Group {
-        println("i have group!")
         callback(group)
-      } else if let string = rawResponse as? String {
-        println("operation string")
-      } else {
-        println("operation failed")
       }
     }
   }
