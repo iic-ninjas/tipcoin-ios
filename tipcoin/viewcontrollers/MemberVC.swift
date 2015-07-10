@@ -48,6 +48,7 @@ class MemberViewController: UIViewController {
       tableView.addSubview(refreshControl)
       tableView.rowHeight = UITableViewAutomaticDimension
       tableView.estimatedRowHeight = 50
+      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 75, right: 0)
     }
   }
   
