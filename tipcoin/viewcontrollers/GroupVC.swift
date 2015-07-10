@@ -82,10 +82,13 @@ class GroupViewController: UIViewController {
     }
   }
   
+  var fetchedGroupInfo = false
+  
   func refresh() {
     if let group = group {
       tippy?.startSpinning()
       GetGroupInfo.get(group.objectId!) { group in
+        self.fetchedGroupInfo = true
         self.members = group.sortedMembers
       }
     }
@@ -102,6 +105,9 @@ class GroupViewController: UIViewController {
 extension GroupViewController: UITableViewDataSource, UITableViewDelegate, MemberCellDelegate {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    if members.count == 0 {
+      return tableView.dequeueReusableCellWithIdentifier("EMPTY_CELL", forIndexPath: indexPath) as! UITableViewCell
+    }
     let cell = tableView.dequeueReusableCellWithIdentifier("MEMBER_CELL", forIndexPath: indexPath) as! MemberCell
     cell.tag = indexPath.row
     cell.member = members[indexPath.row]
@@ -110,7 +116,8 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate, Membe
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return members.count
+    if !fetchedGroupInfo { return 0 }
+    return max(members.count, 1)
   }
   
   func cellStateChanged(cell: MemberCell) {

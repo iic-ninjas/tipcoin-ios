@@ -458,7 +458,7 @@
                                 <color key="backgroundColor" red="0.98425167798995972" green="0.98436206579208374" blue="0.98418813943862915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.56488412618637085" green="0.56472325325012207" blue="0.58117711544036865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MEMBER_CELL" id="qVK-NZ-JIb" customClass="MemberCell" customModule="tipcoin" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MEMBER_CELL" rowHeight="75" id="qVK-NZ-JIb" customClass="MemberCell" customModule="tipcoin" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qVK-NZ-JIb" id="YQc-vH-uhH">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -549,6 +549,26 @@
                                             <outlet property="spotButton" destination="caU-MS-CmJ" id="1Qp-OJ-my1"/>
                                             <segue destination="amn-EB-qYc" kind="show" identifier="showMember" id="PB2-8r-bNT"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EMPTY_CELL" rowHeight="355" id="gmS-io-jJH">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gmS-io-jJH" id="H5I-ob-DAP">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="Ups-b8-hev">
+                                                    <rect key="frame" x="177" y="68" width="247" height="219"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="219" id="yMm-ff-ajV"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ups-b8-hev" secondAttribute="bottom" constant="60" id="Yao-d2-8nD"/>
+                                                <constraint firstItem="Ups-b8-hev" firstAttribute="top" secondItem="H5I-ob-DAP" secondAttribute="topMargin" constant="60" id="nMa-7t-4lm"/>
+                                                <constraint firstAttribute="centerX" secondItem="Ups-b8-hev" secondAttribute="centerX" id="yQ4-Zn-NIH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -710,7 +730,7 @@
                                 <rect key="frame" x="0.0" y="165" width="600" height="435"/>
                                 <color key="backgroundColor" red="0.98425167798995972" green="0.98436206579208374" blue="0.98418813943862915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TRANSACTION_CELL" id="wgA-QY-4Dl" customClass="TransactionCell" customModule="tipcoin" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TRANSACTION_CELL" rowHeight="50" id="wgA-QY-4Dl" customClass="TransactionCell" customModule="tipcoin" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wgA-QY-4Dl" id="Cy9-Dv-r7x">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -736,8 +756,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="k6p-2p-7zd" firstAttribute="top" secondItem="Cy9-Dv-r7x" secondAttribute="topMargin" constant="-5" id="9qS-Ip-3Pu"/>
                                                 <constraint firstItem="4bs-BV-mly" firstAttribute="leading" secondItem="k6p-2p-7zd" secondAttribute="trailing" constant="16" id="AyM-6g-bzz"/>
                                                 <constraint firstItem="Mzd-Jq-isy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4bs-BV-mly" secondAttribute="trailing" constant="100" id="HIT-KC-7hY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="k6p-2p-7zd" secondAttribute="bottom" constant="-5" id="LCH-Hm-mBb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Mzd-Jq-isy" secondAttribute="trailing" id="Zq1-zl-N2b"/>
                                                 <constraint firstAttribute="centerY" secondItem="k6p-2p-7zd" secondAttribute="centerY" id="aOL-hl-g0X"/>
                                                 <constraint firstItem="k6p-2p-7zd" firstAttribute="leading" secondItem="Cy9-Dv-r7x" secondAttribute="leadingMargin" id="kbf-kN-4jf"/>
@@ -751,6 +773,29 @@
                                             <outlet property="indicatorImage" destination="k6p-2p-7zd" id="IfI-F9-UMe"/>
                                             <outlet property="nameLabel" destination="4bs-BV-mly" id="gvl-hX-G09"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EMPTY_CELL" rowHeight="200" id="hs6-MR-9Sc">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hs6-MR-9Sc" id="u90-l9-V2d">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No activity was found in the last 90 days." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSi-Yu-skQ">
+                                                    <rect key="frame" x="145" y="90" width="312" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.25488343829999999" green="0.25491636989999999" blue="0.25486448410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="gSi-Yu-skQ" secondAttribute="trailing" constant="50" id="EGw-sl-7zC"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gSi-Yu-skQ" secondAttribute="bottom" constant="82" id="SmV-mI-6y6"/>
+                                                <constraint firstItem="gSi-Yu-skQ" firstAttribute="top" secondItem="u90-l9-V2d" secondAttribute="topMargin" constant="82" id="dRK-Kv-ShC"/>
+                                                <constraint firstItem="gSi-Yu-skQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="u90-l9-V2d" secondAttribute="leadingMargin" constant="50" id="lLb-Is-qcr"/>
+                                                <constraint firstAttribute="centerX" secondItem="gSi-Yu-skQ" secondAttribute="centerX" id="wC5-5s-cKr"/>
+                                                <constraint firstAttribute="centerY" secondItem="gSi-Yu-skQ" secondAttribute="centerY" id="yUJ-y6-j7e"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -921,6 +966,7 @@
         <image name="Tile" width="50" height="50"/>
         <image name="default-avatar" width="75" height="75"/>
         <image name="empty-group-state" width="258" height="77"/>
+        <image name="empty-state" width="247" height="222"/>
         <image name="icon-back" width="50" height="50"/>
         <image name="icon-burger" width="50" height="50"/>
         <image name="icon-close" width="50" height="50"/>

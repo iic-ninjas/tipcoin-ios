@@ -51,6 +51,9 @@ class MemberViewController: UIViewController {
       refreshControl = UIRefreshControl()
       refreshControl.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
       tableView.addSubview(refreshControl)
+      tableView.rowHeight = UITableViewAutomaticDimension
+      tableView.estimatedRowHeight = 50
+
     }
   }
 
@@ -68,11 +71,14 @@ class MemberViewController: UIViewController {
     }
   }
   
+  var fetchedTransaction = false
+  
   func refresh() {
     tippyView?.startSpinning()
     if let member = member {
       MemberInfoOperation.run(member, callback: { (newMember, err) -> Void in
         if let newMember = newMember as? Member {
+          self.fetchedTransaction = true
           self.transactions = newMember.sortedTransactions ?? []
         }
       })
@@ -87,6 +93,9 @@ class MemberViewController: UIViewController {
 extension MemberViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    if transactions.count == 0 {
+      return tableView.dequeueReusableCellWithIdentifier("EMPTY_CELL", forIndexPath: indexPath) as! UITableViewCell
+    }
     let cell = tableView.dequeueReusableCellWithIdentifier("TRANSACTION_CELL", forIndexPath: indexPath) as! TransactionCell
     let transaction = transactions[indexPath.row]
     cell.setTransaction(transaction, member: member!)
@@ -94,7 +103,8 @@ extension MemberViewController: UITableViewDataSource, UITableViewDelegate {
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return transactions.count
+    if !fetchedTransaction { return 0 }
+    return max(transactions.count, 1)
   }
   
 }
