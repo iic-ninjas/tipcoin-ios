@@ -37,12 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         InviteManager.sharedInstance.receivedInviteWithGroupId(groupId, inviteToken: inviteToken)
         if let user = PFUser.currentUser() {
           InviteManager.sharedInstance.joinGroup() { group, err in
-            if let group = group as? Group {
-              Drop.down("You just joined group \"\(group.name)\"", blur: .Dark)
-              NSNotificationCenter.defaultCenter().postNotificationName("JOINED_GROUP", object: group)
-            }
           }
-          
         }
         
         return true

@@ -64,6 +64,12 @@
                                     <constraint firstAttribute="width" constant="320" id="ikj-eL-BHx"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to join the group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFW-Ov-CLu">
+                                <rect key="frame" x="140" y="559" width="320" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.99993699789047241" green="1" blue="0.99987250566482544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.314727783203125" green="0.75386148691177368" blue="0.37075373530387878" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -71,14 +77,18 @@
                             <constraint firstItem="h8S-Yy-Ftx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TCa-ce-tzX" secondAttribute="bottom" id="6MA-OR-bA7"/>
                             <constraint firstAttribute="centerX" secondItem="FFX-fa-9bR" secondAttribute="centerX" id="f8T-jW-OT0"/>
                             <constraint firstItem="TCa-ce-tzX" firstAttribute="top" secondItem="FFX-fa-9bR" secondAttribute="bottom" constant="23" id="g4d-dA-TCF"/>
+                            <constraint firstItem="TCa-ce-tzX" firstAttribute="width" secondItem="TFW-Ov-CLu" secondAttribute="width" id="n9y-yV-x6b"/>
                             <constraint firstAttribute="centerY" secondItem="FFX-fa-9bR" secondAttribute="centerY" id="oUR-hO-ZTi"/>
                             <constraint firstAttribute="centerX" secondItem="TCa-ce-tzX" secondAttribute="centerX" id="xN9-gr-YeV"/>
+                            <constraint firstItem="TFW-Ov-CLu" firstAttribute="top" secondItem="TCa-ce-tzX" secondAttribute="bottom" constant="14" id="yyo-Zi-VYt"/>
+                            <constraint firstItem="TCa-ce-tzX" firstAttribute="centerX" secondItem="TFW-Ov-CLu" secondAttribute="centerX" id="zpe-UP-vkT"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="patternImage" value="Tile"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="inviteDiscloser" destination="TFW-Ov-CLu" id="4ht-TI-dWD"/>
                         <outlet property="loginButton" destination="TCa-ce-tzX" id="jt7-c6-2v0"/>
                         <outlet property="tiledBgView" destination="RrK-GV-rfX" id="3bq-Y9-yqq"/>
                         <segue destination="XmI-1O-OR2" kind="presentation" identifier="showGroup" modalTransitionStyle="crossDissolve" id="zM2-fw-vKj"/>
@@ -1012,8 +1022,8 @@
         <image name="tippy-splash" width="122" height="123"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="YXh-cY-QKW"/>
+        <segue reference="zM2-fw-vKj"/>
         <segue reference="PB2-8r-bNT"/>
-        <segue reference="4gg-vf-u3W"/>
-        <segue reference="PkS-eQ-BSm"/>
     </inferredMetricsTieBreakers>
 </document>

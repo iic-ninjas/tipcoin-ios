@@ -13,6 +13,7 @@ class SplashViewController: UIViewController {
   
   @IBOutlet var tiledBgView: TiledBackgroundView!
   @IBOutlet weak var loginButton: UIButton!
+  @IBOutlet weak var inviteDiscloser: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,7 +24,6 @@ class SplashViewController: UIViewController {
   deinit{
     println("- SplashVC")
   }
-
   
   func startLoading(){
     tiledBgView.animate()
@@ -33,16 +33,21 @@ class SplashViewController: UIViewController {
       showLogin()
     }
   }
+  
   func showLogin() {
     tiledBgView.stopAnimation()
     UIView.animateWithDuration(0.2, animations: {
       self.loginButton.alpha = 1
     })
+    if InviteManager.sharedInstance.hasInvite() {
+      inviteDiscloser.hidden = false
+    }
   }
 
   @IBAction func didClickLogin(sender: AnyObject) {
     tiledBgView.animate()
     loginButton.alpha = 0
+    inviteDiscloser.hidden = true
     PFFacebookUtils.logInInBackgroundWithReadPermissions([]) {
       (user: PFUser?, error: NSError?) -> Void in
       if let user = user {
@@ -75,15 +80,7 @@ class SplashViewController: UIViewController {
       }
       if InviteManager.sharedInstance.hasInvite() {
         InviteManager.sharedInstance.joinGroup() { group, err in
-          if let group = group as? Group {
-          let vc = UIAlertController(title: "Joined Group", message: "Successfully join the group \"\(group.name)\"", preferredStyle: UIAlertControllerStyle.Alert)
-            vc.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { _ in
-              self.navigateToNext()
-            }))
-            self.presentViewController(vc, animated: true, completion: nil)
-          } else {
-            self.navigateToNext()
-          }
+          self.navigateToNext()
         }
       } else {
         self.navigateToNext()

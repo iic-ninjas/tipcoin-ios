@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SwiftyDrop
+
 
 class InviteManager {
   
@@ -30,11 +32,16 @@ class InviteManager {
   }
   
   func joinGroup(callback: PFIdResultBlock) {
-    JoinGroupOperation.run(groupID!, inviteToken: inviteToken!, callback: { obj,err in
-      if err == nil {
+    JoinGroupOperation.run(groupID!, inviteToken: inviteToken!, callback: { group, err in
+      if let group = group as? Group {
         self.clearInvite()
+        Drop.down("You just joined group \"\(group.name)\"", blur: .Dark)
+        NSNotificationCenter.defaultCenter().postNotificationName("JOINED_GROUP", object: group)
+      } else if err != nil {
+        let errorMessage = err?.localizedDescription ?? "Error joining group"
+        Drop.down(errorMessage, state: .Error)
       }
-      callback(obj, err)
+      callback(group, err)
     })
   }
   
