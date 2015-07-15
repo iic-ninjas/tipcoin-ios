@@ -20,6 +20,7 @@ class MenuViewController: UIViewController {
     didSet{
       tableView.rowHeight = UITableViewAutomaticDimension
       tableView.estimatedRowHeight = 60
+      tableView.alwaysBounceVertical = false
     }
   }
   @IBOutlet weak var avatarView: UIImageView!
